@@ -7,13 +7,13 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
-import GroupAddIcon from "@mui/icons-material/GroupAdd";
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import PersonIcon from "@mui/icons-material/Person";
+import PersonIcon from '@mui/icons-material/Person';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const defaultTheme = createTheme();
@@ -36,7 +36,7 @@ const Signup = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     let newErrors = { ...errors };
-
+  
     switch (name) {
       case "email":
         newErrors.email = value.includes("@")
@@ -56,14 +56,16 @@ const Signup = () => {
       default:
         break;
     }
-
+  
     setErrors(newErrors);
     setSignupData({ ...signupData, [name]: value });
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Simple email validation
     if (!signupData.email.includes("@")) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -72,6 +74,7 @@ const Signup = () => {
       return;
     }
 
+    // Simple password length validation
     if (signupData.password.length < 6) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -80,6 +83,7 @@ const Signup = () => {
       return;
     }
 
+    // Password confirmation validation
     if (signupData.password !== signupData.confirmPassword) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -88,12 +92,14 @@ const Signup = () => {
       return;
     }
 
+    // Clear error messages on successful submission
     setErrors({
       email: "",
       password: "",
       confirmPassword: "",
     });
 
+    // Proceed with signup
     try {
       const response = await axios.post(
         "http://localhost:3001/users",
@@ -101,6 +107,7 @@ const Signup = () => {
       );
       console.log("New user added:", response.data);
       alert("Signup successful! Redirecting to login page...");
+      // Redirect to login page after successful signup
       window.location.href = "/login";
     } catch (error) {
       console.error("Error adding user:", error);
@@ -111,65 +118,69 @@ const Signup = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <Container component="main" maxWidth="xl">
+      <Container component="main" maxWidth="xs">
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            minHeight: "100vh",
-            padding: "60px",
-            borderRadius: "10px",
-            boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-            backdropFilter: "blur(25px)",
+            marginTop: 8,
             marginBottom: 8,
-            marginTop: 5,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            padding: "25px",
+            borderRadius: "15px",
+            boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+            backdropFilter: "blur(15px)", // Increased blur effect
+            position: "absolute",
+            top: "0",
+            left: "0",
             width: "100%",
+            height: "100%",
+            zIndex: "0",
             backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white background
             backgroundImage:
               'url("https://www.wholestory.com.au/wp-content/uploads/2023/02/house-plants-1536x832.jpg")',
-            backgroundSize: "covfiller",
+            backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
+
           }}
         >
           {/* The loginForm itself */}
           <Box
             sx={{
               backgroundColor: "rgba(255, 255, 255, 0.8)",
-              padding: "60px",
+              padding: "10px",
               borderRadius: "10px",
-
-              width: "100%",
-              maxWidth: "900px",
-              height: "auto", // Adjust height as needed
+              width: "750px",
+              height: "700px",
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-              backdropFilter: "blur(15px)", // Apply blur effect
+              backdropFilter: "blur(20px)", 
+              zIndex: "1",
             }}
           >
             <Avatar
               sx={{
                 m: 1,
                 bgcolor: "#43a047",
-                margin: "auto",
-                marginBottom: "20px",
-                marginTop: "25px",
-                width: "75px",
-                height: "75px",
+                margin: "auto", // Center the Avatar horizontally
+                marginBottom: "20px", // Add margin bottom for spacing
+                marginTop: "25px", // Adjust margin top to center vertically
+                width: "75px", // Reduce icon size
+                height: "75px" // Reduce icon size
               }}
             >
               <GroupAddIcon sx={{ fontSize: "3rem" }}></GroupAddIcon>
               {/* <PersonIcon sx={{ fontSize: "3rem" }}></PersonIcon> */}
             </Avatar>
-            <Typography component="h1" variant="h5" sx={{ padding: 3 }}>
+
+            <Typography component="h1" variant="h5" sx={{ marginLeft: "25px" }}>
               Sign up
             </Typography>
-
             <Box
               component="form"
               noValidate
               onSubmit={handleSubmit}
-              sx={{ mt: 3 }}
+              sx={{ mt: 3, padding: "20px" }}
             >
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
@@ -184,10 +195,9 @@ const Signup = () => {
                     label="First Name"
                     autoFocus
                     sx={{
-                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-                        {
-                          borderColor: "#66bb6a", // Change border color to green when focused
-                        },
+                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#66bb6a", // Change border color to green when focused
+                      },
                       "& .MuiInputLabel-outlined.Mui-focused": {
                         color: "#66bb6a", // Change placeholder color to green when focused
                       },
@@ -205,10 +215,9 @@ const Signup = () => {
                     id="lastName"
                     label="Last Name"
                     sx={{
-                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-                        {
-                          borderColor: "#66bb6a", // Change border color to green when focused
-                        },
+                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#66bb6a", // Change border color to green when focused
+                      },
                       "& .MuiInputLabel-outlined.Mui-focused": {
                         color: "#66bb6a", // Change placeholder color to green when focused
                       },
@@ -228,10 +237,9 @@ const Signup = () => {
                     error={Boolean(errors.email)}
                     helperText={errors.email}
                     sx={{
-                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-                        {
-                          borderColor: "#66bb6a", // Change border color to green when focused
-                        },
+                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#66bb6a", // Change border color to green when focused
+                      },
                       "& .MuiInputLabel-outlined.Mui-focused": {
                         color: "#66bb6a", // Change placeholder color to green when focused
                       },
@@ -252,10 +260,9 @@ const Signup = () => {
                     error={Boolean(errors.password)}
                     helperText={errors.password}
                     sx={{
-                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-                        {
-                          borderColor: "#66bb6a", // Change border color to green when focused
-                        },
+                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#66bb6a", // Change border color to green when focused
+                      },
                       "& .MuiInputLabel-outlined.Mui-focused": {
                         color: "#66bb6a", // Change placeholder color to green when focused
                       },
@@ -276,10 +283,9 @@ const Signup = () => {
                     error={Boolean(errors.confirmPassword)}
                     helperText={errors.confirmPassword}
                     sx={{
-                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-                        {
-                          borderColor: "#66bb6a", // Change border color to green when focused
-                        },
+                      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#66bb6a", // Change border color to green when focused
+                      },
                       "& .MuiInputLabel-outlined.Mui-focused": {
                         color: "#66bb6a", // Change placeholder color to green when focused
                       },
@@ -301,12 +307,7 @@ const Signup = () => {
                   type="submit"
                   width="50%"
                   variant="contained"
-                  sx={{
-                    mt: 5,
-                    mb: 2,
-                    bgcolor: "#66bb6a",
-                    "&:hover": { bgcolor: "#4caf50" },
-                  }}
+                  sx={{ mt: 3, mb: 2, bgcolor: "#66bb6a", "&:hover": { bgcolor: "#4caf50" } }} // Change button color to green and dark green on hover
                 >
                   Sign Up
                 </Button>
@@ -314,13 +315,9 @@ const Signup = () => {
 
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "#66bb6a", cursor: "pointer" }}
-                    onClick={() => (window.location.href = "/login")}
-                  >
+                  <Link href="/login" variant="body2" sx={{ color: "#66bb6a" }}>
                     Already have an account? Sign in
-                  </Typography>
+                  </Link>
                 </Grid>
               </Grid>
             </Box>
