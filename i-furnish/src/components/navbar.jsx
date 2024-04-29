@@ -1,8 +1,18 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 
-const Navbars = () => {
+const Navbars = ({ onHideFooter }) => {
+  const handleNavbarClick = (path) => {
+    if (path === "/signup") {
+      onHideFooter(true);
+    } else {
+      onHideFooter(false);
+    }
+  };
+
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -16,36 +26,51 @@ const Navbars = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" onClick={() => handleNavbarClick("/")}>
               Home
             </Nav.Link>{" "}
-            <Nav.Link as={Link} to="/about">
+            <Nav.Link
+              as={Link}
+              to="/about"
+              onClick={() => handleNavbarClick("/about")}
+            >
               About
             </Nav.Link>{" "}
-            <Nav.Link as={Link} to="/shop">
+            <Nav.Link
+              as={Link}
+              to="/shop"
+              onClick={() => handleNavbarClick("/shop")}
+            >
               Shop
             </Nav.Link>{" "}
-            <Nav.Link as={Link} to="/furniture">
+            <Nav.Link
+              as={Link}
+              to="/furniture"
+              onClick={() => handleNavbarClick("/furniture")}
+            >
               Trending
             </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
-            <Nav.Link as={Link} to="/contact">
+            <Nav.Link
+              as={Link}
+              to="/contact"
+              onClick={() => handleNavbarClick("/contact")}
+            >
               Contact
             </Nav.Link>{" "}
           </Nav>
           <Nav>
-
-
-            
-          <Nav.Link as={Link} to="/signup">
+            <Nav.Link
+              as={Link}
+              to="/signup"
+              onClick={() => handleNavbarClick("/signup")}
+            >
               Signup
             </Nav.Link>{" "}
-
-
-
-
+            <Nav.Link as={Link} to="/cart">
+              <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
+            </Nav.Link>{" "}
             <Nav.Link as={Link} to="/profile">
-              Profile
+              <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
             </Nav.Link>{" "}
           </Nav>
         </Navbar.Collapse>
