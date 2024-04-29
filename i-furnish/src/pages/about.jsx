@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/responsive.css";
 import "../styles/style.css";
-import "../styles/style.scss";
+import globalStyle from "../styles/style.module.scss";
 import "../styles/bootstrap.css";
 
 const About = () => {

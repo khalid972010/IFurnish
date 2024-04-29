@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/home";
 import Shop from "../pages/shop";
 import Furniture from "../pages/furniture";
+import Item from "../components/item";
 function App() {
   return (
     <Suspense fallback={<SimpleBackdrop />}>
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />{" "}
           <Route path="/about" element={<About />} />{" "}
+          <Route path="/item" element={<Item />} />{" "}
           <Route path="shop" element={<Shop />} />{" "}
           <Route path="furniture" element={<Furniture />} />{" "}
           <Route path="contact" element={<Contact />} />{" "}

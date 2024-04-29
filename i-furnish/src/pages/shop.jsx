@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ShopCard from "../components/shopCard";
 
 const Shop = () => {
+  const isNew = true;
   return (
     <section className="brand_section layout_padding">
       <div className="container">
@@ -10,54 +12,12 @@ const Shop = () => {
         </div>
         <div
           className="brand_container layout_padding2 "
-          style={{ width: "75vw" }}>
-          <div className="box">
-            <a href>
-              <div className="new">
-                <h5>New</h5>
-              </div>
-              <div className="img-box">
-                <img src="images/slider-img.png" alt />
-              </div>
-              <div className="detail-box">
-                <h6 className="price">$100</h6>
-                <h6>Chair</h6>
-              </div>
-            </a>
-          </div>
-          <div className="box">
-            <a href>
-              <div className="img-box">
-                <img src="images/slider-img.png" alt />
-              </div>
-              <div className="detail-box">
-                <h6 className="price">$100</h6>
-                <h6>Chair</h6>
-              </div>
-            </a>
-          </div>
-          <div className="box">
-            <a href>
-              <div className="img-box">
-                <img src="images/slider-img.png" alt />
-              </div>
-              <div className="detail-box">
-                <h6 className="price">$100</h6>
-                <h6>Chair</h6>
-              </div>
-            </a>
-          </div>
-          <div className="box">
-            <a href>
-              <div className="img-box">
-                <img src="images/slider-img.png" alt />
-              </div>
-              <div className="detail-box">
-                <h6 className="price">$100</h6>
-                <h6>Chair</h6>
-              </div>
-            </a>
-          </div>
+          style={{ width: "75vw" }}
+        >
+          <ShopCard isNew={true}></ShopCard>
+          <ShopCard></ShopCard>
+          <ShopCard></ShopCard>
+          <ShopCard></ShopCard>
         </div>
         <Link to="sasa" className="brand-btn">
           See More
