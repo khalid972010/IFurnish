@@ -29,9 +29,9 @@ const SingleItemCart = () => {
           data-mdb-ripple-color="light"
         >
           <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+            src="https://www.ikea.com/eg/en/images/products/matchspel-gaming-chair-bomstad-black__0985645_pe816716_s5.jpg?f=xl"
             className="w-100"
-            alt="Blue Jeans Jacket"
+            alt="MATCHSPEL"
           />
           <a href="#!">
             <div
@@ -47,10 +47,9 @@ const SingleItemCart = () => {
       <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
         {/* Data */}
         <p>
-          <strong>Blue denim shirt</strong>
+          <strong>MATCHSPEL</strong>
         </p>
-        <p>Color: blue</p>
-        <p>Size: M</p>
+        <p>Chair</p>
         <button
           type="button"
           className="btn btn-primary btn-sm me-3 mb-2 pe-3"

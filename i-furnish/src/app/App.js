@@ -18,7 +18,6 @@ function App() {
   const [hideFooter, setHideFooter] = useState(false);
 
   const onHideFooter = (value) => {
-    console.log(value);
     setHideFooter(value);
   };
 
@@ -38,7 +37,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-        {/* {!hideFooter && <Footer />} */}
+        {!hideFooter && <Footer />}
       </BrowserRouter>
     </Suspense>
   );
