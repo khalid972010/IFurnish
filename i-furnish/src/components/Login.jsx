@@ -49,7 +49,7 @@ function Login() {
       setError("");
       setSuccess(true);
       setTimeout(() => {
-        window.location.href = "/home";
+        window.location.href = "/";
       }, 1000);
     } catch (error) {
       console.error("Error fetching user data:", error);
@@ -85,7 +85,7 @@ function Login() {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: "#66bb6a", width: 80, height: 80 }}>
-              <LoginIcon />
+              <LoginIcon  sx={{ fontSize: "2.5rem"} } ></LoginIcon>
             </Avatar>
 <Typography component="h1" variant="h5" sx={{ color: "#66bb6a", marginRight: "390px", marginTop: "20px" }}>
   Login
