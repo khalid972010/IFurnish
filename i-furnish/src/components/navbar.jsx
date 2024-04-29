@@ -66,6 +66,13 @@ const Navbars = ({ onHideFooter }) => {
             >
               Signup
             </Nav.Link>{" "}
+            <Nav.Link
+              as={Link}
+              to="/login"
+              onClick={() => handleNavbarClick("/login")}
+            >
+          Login
+            </Nav.Link>{" "}
             <Nav.Link as={Link} to="/cart">
               <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
             </Nav.Link>{" "}

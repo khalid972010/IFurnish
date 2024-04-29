@@ -11,6 +11,7 @@ import SignupPage from "../pages/Signup_Page";
 import Shop from "../pages/shop";
 import Furniture from "../pages/furniture";
 import Item from "../components/item";
+import LoginPage from "../pages/Login_Page";
 import Cart from "../pages/cart";
 
 function App() {
@@ -34,9 +35,10 @@ function App() {
           <Route path="/profile" element={<Contact />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-        {!hideFooter && <Footer />}
+        {/* {!hideFooter && <Footer />} */}
       </BrowserRouter>
     </Suspense>
   );
