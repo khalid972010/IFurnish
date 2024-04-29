@@ -65,7 +65,6 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Simple email validation
     if (!signupData.email.includes("@")) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -74,7 +73,6 @@ const Signup = () => {
       return;
     }
 
-    // Simple password length validation
     if (signupData.password.length < 6) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -83,7 +81,6 @@ const Signup = () => {
       return;
     }
 
-    // Password confirmation validation
     if (signupData.password !== signupData.confirmPassword) {
       setErrors((prevErrors) => ({
         ...prevErrors,
@@ -92,7 +89,6 @@ const Signup = () => {
       return;
     }
 
-    // Clear error messages on successful submission
     setErrors({
       email: "",
       password: "",
@@ -107,7 +103,6 @@ const Signup = () => {
       );
       console.log("New user added:", response.data);
       alert("Signup successful! Redirecting to login page...");
-      // Redirect to login page after successful signup
       window.location.href = "/login";
     } catch (error) {
       console.error("Error adding user:", error);
@@ -118,43 +113,42 @@ const Signup = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      <Container component="main" maxWidth="xs">
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: "40px",
-            borderRadius: "15px",
-            boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-            backdropFilter: "blur(15px)", // Increased blur effect
-            position: "absolute",
-            top: "0",
-            left: "0",
-            width: "100%",
-            height: "100%",
-            zIndex: "0",
-            backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white background
-            backgroundImage:
-              'url("https://www.wholestory.com.au/wp-content/uploads/2023/02/house-plants-1536x832.jpg")',
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
-        >
-          {/* The loginForm itself */}
-          <Box
-            sx={{
-              backgroundColor: "rgba(255, 255, 255, 0.8)",
-              padding: "10px",
-              borderRadius: "10px",
-              width: "700px",
-              height: "700px",
-              boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-              backdropFilter: "blur(20px)", // Apply blur effect
-              zIndex: "1",
-            }}
+      <Container component="main" maxWidth="xl">
+      <Box
+  sx={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    minHeight: "100vh",
+    padding: "60px",
+    borderRadius: "10px",
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+    backdropFilter: "blur(25px)", 
+    marginBottom: 8,
+    marginTop:5,
+    width:"100%",
+    backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent white background
+    backgroundImage:
+      'url("https://www.wholestory.com.au/wp-content/uploads/2023/02/house-plants-1536x832.jpg")',
+    backgroundSize: "covfiller",
+    backgroundRepeat: "no-repeat",
+    // backgroundPosition: "center",
+
+  }}
+>
+  {/* The loginForm itself */}
+  <Box
+    sx={{
+      backgroundColor: "rgba(255, 255, 255, 0.8)",
+      padding: "60px",
+      borderRadius: "10px",
+      
+      width: "100%", 
+      maxWidth: "900px", 
+      height: "auto", // Adjust height as needed
+      boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
+      backdropFilter: "blur(15px)", // Apply blur effect
+    }}
           >
             <Avatar
               sx={{
@@ -305,7 +299,7 @@ const Signup = () => {
                   type="submit"
                   width="50%"
                   variant="contained"
-                  sx={{ mt: 3, mb: 2, bgcolor: "#66bb6a", "&:hover": { bgcolor: "#4caf50" } }} // Change button color to green and dark green on hover
+                  sx={{ mt: 5, mb: 2, p:3 ,bgcolor: "#66bb6a", "&:hover": { bgcolor: "#4caf50" } }} 
                 >
                   Sign Up
                 </Button>
@@ -313,9 +307,14 @@ const Signup = () => {
 
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Link href="/login" variant="body2" sx={{ color: "#66bb6a" }}>
-                    Already have an account? Sign in
-                  </Link>
+                <Typography
+  variant="body2"
+  sx={{ color: "#66bb6a", cursor: "pointer" }}
+  onClick={() => window.location.href = "/login"}
+>
+  Already have an account? Sign in
+</Typography>
+
                 </Grid>
               </Grid>
             </Box>
