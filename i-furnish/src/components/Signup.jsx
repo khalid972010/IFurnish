@@ -173,7 +173,7 @@ const Signup = () => {
               {/* <PersonIcon sx={{ fontSize: "3rem" }}></PersonIcon> */}
             </Avatar>
 
-            <Typography component="h1" variant="h5" sx={{ marginLeft: "25px" }}>
+            <Typography component="h1" variant="h5" sx={{ marginLeft: "25px" ,color:"#66bb6a"}}>
               Sign up
             </Typography>
             <Box
