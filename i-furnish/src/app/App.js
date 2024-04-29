@@ -36,6 +36,7 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/item" element={<Item />} />
         </Routes>
         {!hideFooter && <Footer />}
       </BrowserRouter>
