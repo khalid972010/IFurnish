@@ -21,27 +21,6 @@ $dark: #4e4e4e;
   width: 100vw;
 }
 
-p {
-  font-size: 0.6em;
-  color: $rose;
-  letter-spacing: 1px;
-}
-
-h1 {
-  font-size: 1.2em;
-  color: $dark;
-  margin-top: -5px;
-}
-
-h2 {
-  color: $tan;
-  margin-top: -5px;
-}
-
-img {
-  width: 290px;
-  margin-top: 47px;
-}
 
 .slideshow-buttons {
   top: 70%;
@@ -91,7 +70,7 @@ img {
   text-align: justify;
 }
 
-button {
+.btnItem {
   background: darken($light, 10%);
   padding: 10px;
   display: inline-block;

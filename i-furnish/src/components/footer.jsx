@@ -1,4 +1,8 @@
 import React from "react";
+import "../styles/responsive.css";
+import "../styles/style.css";
+import globalStyle from "../styles/style.module.scss";
+import "../styles/bootstrap.css";
 
 const Footer = () => {
   return (
@@ -14,19 +18,19 @@ const Footer = () => {
                 <h5>About Shop</h5>
                 <div>
                   <div className="img-box">
-                    <img src="images/location-white.png" width="18px" alt />
+                    <img src="images/location-white.png" className="w-100" alt=""/>
                   </div>
                   <p>Address</p>
                 </div>
-                <div>
+                <div className="row align-align-items-center">
                   <div className="img-box">
-                    <img src="images/telephone-white.png" width="12px" alt />
+                    <img src="images/telephone-white.png" alt="" />
                   </div>
                   <p>+01 1234567890</p>
                 </div>
                 <div>
                   <div className="img-box">
-                    <img src="images/envelope-white.png" width="18px" alt />
+                    <img src="images/envelope-white.png" alt="" />
                   </div>
                   <p>ifurnish@gmail.com</p>
                 </div>
@@ -50,36 +54,36 @@ const Footer = () => {
                   <div>
                     <a href>
                       <div className="insta-box b-1">
-                        <img src="images/i-1.jpg" alt />
+                        <img src="images/i-1.jpg" alt="" />
                       </div>
                     </a>
                     <a href>
                       <div className="insta-box b-2">
-                        <img src="images/i-2.jpg" alt />
+                        <img src="images/i-2.jpg" alt="" />
                       </div>
                     </a>
                   </div>
                   <div>
                     <a href>
                       <div className="insta-box b-3">
-                        <img src="images/i-3.jpg" alt />
+                        <img src="images/i-3.jpg" alt="" />
                       </div>
                     </a>
                     <a href>
                       <div className="insta-box b-4">
-                        <img src="images/i-4.jpg" alt />
+                        <img src="images/i-4.jpg" alt="" />
                       </div>
                     </a>
                   </div>
                   <div>
                     <a href>
                       <div className="insta-box b-3">
-                        <img src="images/i-5.jpg" alt />
+                        <img src="images/i-5.jpg" alt="" />
                       </div>
                     </a>
                     <a href>
                       <div className="insta-box b-4">
-                        <img src="images/i-6.jpg" alt />
+                        <img src="images/i-6.jpg" alt="" />
                       </div>
                     </a>
                   </div>
@@ -95,16 +99,16 @@ const Footer = () => {
                 </form>
                 <div className="social_box">
                   <a href>
-                    <img src="images/fb.png" alt />
+                    <img src="images/fb.png" className="w-100" alt=""/>
                   </a>
                   <a href>
-                    <img src="images/twitter.png" alt />
+                    <img src="images/twitter.png" className="w-100" alt=""/>
                   </a>
                   <a href>
-                    <img src="images/linkedin.png" alt />
+                    <img src="images/linkedin.png"  className="w-100" alt=""/>
                   </a>
                   <a href>
-                    <img src="images/youtube.png" alt />
+                    <img src="images/youtube.png" className="w-100" alt=""/>
                   </a>
                 </div>
               </div>

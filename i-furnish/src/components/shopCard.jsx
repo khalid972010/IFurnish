@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ShopCard = (props) => {
   const { isNew } = props;
   return (
     <div className="box">
-      <a href>
+        <Link to="/item" style={{textDecoration:"none"}}>
         {isNew && (
           <div className="new">
             <h5>New</h5>
@@ -18,7 +19,7 @@ const ShopCard = (props) => {
           <h6 className="price">$100</h6>
           <h6>Chair</h6>
         </div>
-      </a>
+    </Link>
     </div>
   );
 };

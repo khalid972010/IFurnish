@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import ShopCard from "../components/shopCard";
 
 const Shop = () => {
-  const isNew = true;
   return (
     <section className="brand_section layout_padding">
       <div className="container">
@@ -19,7 +18,7 @@ const Shop = () => {
           <ShopCard></ShopCard>
           <ShopCard></ShopCard>
         </div>
-        <Link to="sasa" className="brand-btn">
+        <Link to="#" className="brand-btn">
           See More
         </Link>
       </div>
