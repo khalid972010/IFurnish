@@ -1,1 +1,1 @@
-"# IFurnish" 
+"# IFurnish project" 
