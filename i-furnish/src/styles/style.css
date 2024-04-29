@@ -57,7 +57,7 @@ body {
 /*header section*/
 .hero_area {
   height: 100vh;
-  background-image: "images/hero-bg.jpg";
+  background-image: "../images/hero-bg.jpg";
   background-size: cover;
   position: relative;
   background-repeat: no-repeat;
@@ -71,7 +71,7 @@ body {
   right: 0;
   width: 45%;
   height: 100%;
-  background-image: "images/hero-side-bg.png";
+  background-image: "../images/hero-side-bg.png";
   background-size: cover;
 }
 
@@ -234,7 +234,7 @@ a:focus {
 
 .slider_section .container {
   position: relative;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .slider_section .number_box {
@@ -283,7 +283,7 @@ a:focus {
 }
 
 .slider_section .detail-box h1 span {
-  font-size: 5rem;
+ font-size: 5rem;
   color: #252525;
 }
 
