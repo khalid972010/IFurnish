@@ -3,7 +3,10 @@ import React from "react";
 const Furniture = () => {
   return (
     <div>
-      <section className="trending_section layout_padding">
+      <section
+        className="trending_section layout_padding"
+        style={{ backgroundColor: "white" }}
+      >
         <div id="accordion">
           <div className="container">
             <div className="row">
@@ -18,7 +21,8 @@ const Furniture = () => {
                       data-toggle="collapse"
                       data-target="#collapseOne"
                       aria-expanded="true"
-                      aria-controls="collapseOne">
+                      aria-controls="collapseOne"
+                    >
                       <div className="number">
                         <h5>01</h5>
                       </div>
@@ -32,7 +36,8 @@ const Furniture = () => {
                       data-toggle="collapse"
                       data-target="#collapseTwo"
                       aria-expanded="false"
-                      aria-controls="collapseTwo">
+                      aria-controls="collapseTwo"
+                    >
                       <div className="number">
                         <h5>02</h5>
                       </div>
@@ -46,7 +51,8 @@ const Furniture = () => {
                       data-toggle="collapse"
                       data-target="#collapseThree"
                       aria-expanded="false"
-                      aria-controls="collapseThree">
+                      aria-controls="collapseThree"
+                    >
                       <div className="number">
                         <h5>03</h5>
                       </div>
@@ -60,7 +66,8 @@ const Furniture = () => {
                       data-toggle="collapse"
                       data-target="#collapseFour"
                       aria-expanded="false"
-                      aria-controls="collapseFour">
+                      aria-controls="collapseFour"
+                    >
                       <div className="number">
                         <h5>04</h5>
                       </div>
@@ -77,7 +84,8 @@ const Furniture = () => {
                   className="collapse show"
                   id="collapseOne"
                   aria-labelledby="headingOne"
-                  data-parent="#accordion">
+                  data-parent="#accordion"
+                >
                   <div className="img_container ">
                     <div className="box b-1">
                       <div className="img-box">
@@ -101,7 +109,8 @@ const Furniture = () => {
                   className="collapse"
                   id="collapseTwo"
                   aria-labelledby="headingTwo"
-                  data-parent="#accordion">
+                  data-parent="#accordion"
+                >
                   <div className="img_container ">
                     <div className="box b-1">
                       <div className="img-box">
@@ -125,7 +134,8 @@ const Furniture = () => {
                   className="collapse"
                   id="collapseThree"
                   aria-labelledby="headingThree"
-                  data-parent="#accordion">
+                  data-parent="#accordion"
+                >
                   <div className="img_container ">
                     <div className="box b-1">
                       <div className="img-box">
@@ -149,7 +159,8 @@ const Furniture = () => {
                   className="collapse"
                   id="collapseFour"
                   aria-labelledby="headingfour"
-                  data-parent="#accordion">
+                  data-parent="#accordion"
+                >
                   <div className="img_container ">
                     <div className="box b-1">
                       <div className="img-box">

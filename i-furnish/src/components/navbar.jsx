@@ -1,8 +1,18 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 
-const Navbars = () => {
+const Navbars = ({ onHideFooter }) => {
+  const handleNavbarClick = (path) => {
+    if (path === "/signup" || path === "/login") {
+      onHideFooter(true);
+    } else {
+      onHideFooter(false);
+    }
+  };
+
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -12,37 +22,71 @@ const Navbars = () => {
           style={{ color: "#24d278", fontSize: "22px", fontWeight: "bold" }}
         >
           IFurnish
-        </Navbar.Brand>{" "}
-        {/* Use Link instead of anchor tag */}
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/" onClick={() => handleNavbarClick("/")}>
               Home
-            </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
-            <Nav.Link as={Link} to="/about">
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/about"
+              onClick={() => handleNavbarClick("/about")}
+            >
               About
-            </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
-            <Nav.Link as={Link} to="/shop">
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/shop"
+              onClick={() => handleNavbarClick("/shop")}
+            >
               Shop
-            </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
-            <Nav.Link as={Link} to="/furniture">
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/furniture"
+              onClick={() => handleNavbarClick("/furniture")}
+            >
               Trending
-            </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
-            <Nav.Link as={Link} to="/contact">
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/contact"
+              onClick={() => handleNavbarClick("/contact")}
+            >
               Contact
-            </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
+            </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link as={Link} to="/profile">
-              Profile
-            </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
+            <Nav.Link
+              as={Link}
+              to="/signup"
+              onClick={() => handleNavbarClick("/signup")}
+            >
+              Signup
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/login"
+              onClick={() => handleNavbarClick("/login")}
+            >
+              Login
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/cart"
+              onClick={() => handleNavbarClick("/cart")}
+            >
+              <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/profile"
+              onClick={() => handleNavbarClick("/profile")}
+            >
+              <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
