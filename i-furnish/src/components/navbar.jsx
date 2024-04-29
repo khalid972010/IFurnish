@@ -6,8 +6,12 @@ const Navbars = () => {
   return (
     <div>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand as={Link} to="/">
-          I-Furnish
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          style={{ color: "#24d278", fontSize: "22px", fontWeight: "bold" }}
+        >
+          IFurnish
         </Navbar.Brand>{" "}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -22,7 +26,7 @@ const Navbars = () => {
               Shop
             </Nav.Link>{" "}
             <Nav.Link as={Link} to="/furniture">
-              Furniture
+              Trending
             </Nav.Link>{" "}
             {/* Use Link instead of anchor tag */}
             <Nav.Link as={Link} to="/contact">

@@ -1,7 +1,7 @@
 import "./App.css";
 import About from "../pages/about";
 import Contact from "../pages/contact";
-
+import Footer from "../components/footer";
 import Navbars from "../components/navbar";
 import { Suspense } from "react";
 import SimpleBackdrop from "../components/spinner";
@@ -12,17 +12,16 @@ function App() {
   return (
     <Suspense fallback={<SimpleBackdrop />}>
       <BrowserRouter>
-        <Navbars /> {/* Render the Navbars component */}
+        <Navbars />
         <Routes>
           <Route path="/" element={<Home />} />{" "}
           <Route path="/about" element={<About />} />{" "}
-          <Route path="/signup" element={<SignupPage />} />{" "}
-
           <Route path="shop" element={<Contact />} />{" "}
           <Route path="furniture" element={<Contact />} />{" "}
           <Route path="contact" element={<Contact />} />{" "}
           <Route path="profile" element={<Contact />} />{" "}
         </Routes>
+        <Footer></Footer>
       </BrowserRouter>
     </Suspense>
   );
