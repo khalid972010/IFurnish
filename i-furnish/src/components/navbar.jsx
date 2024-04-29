@@ -9,22 +9,18 @@ const Navbars = () => {
         <Navbar.Brand as={Link} to="/">
           I-Furnish
         </Navbar.Brand>{" "}
-        {/* Use Link instead of anchor tag */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
             <Nav.Link as={Link} to="/about">
               About
             </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
             <Nav.Link as={Link} to="/shop">
               Shop
             </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
             <Nav.Link as={Link} to="/furniture">
               Furniture
             </Nav.Link>{" "}
@@ -32,13 +28,21 @@ const Navbars = () => {
             <Nav.Link as={Link} to="/contact">
               Contact
             </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
           </Nav>
           <Nav>
+
+
+            
+          <Nav.Link as={Link} to="/signup">
+              Signup
+            </Nav.Link>{" "}
+
+
+
+
             <Nav.Link as={Link} to="/profile">
               Profile
             </Nav.Link>{" "}
-            {/* Use Link instead of anchor tag */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

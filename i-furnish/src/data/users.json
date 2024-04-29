@@ -43,6 +43,22 @@
       "password": "rana123",
       "name": "Rana essam",
       "phone": "01033"
+    },
+    {
+      "id": "e08f",
+      "email": "Ranaessam376@gmail.com",
+      "password": "Rana123",
+      "firstName": "Ranuna",
+      "lastName": "Assoma"
+    },
+    {
+      "id": "573d",
+      "email": "Ranaessam@gmail.com",
+      "password": "Rana123",
+      "confirmPassword": "Rana123",
+      "firstName": "Rana",
+      "lastName": "Essam",
+      "agreedToTerms": "on"
     }
   ]
 }

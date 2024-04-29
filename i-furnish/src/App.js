@@ -1,30 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-import Signup from './components/Signup'
-import Login from './components/Login'
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbars from "../components/navbar";
+import { Suspense } from "react";
+import SimpleBackdrop from "../components/spinner";
+import Home from "../pages/home";
+import About from "../pages/about";
+import Contact from "../pages/contact";
+import SignupPage from "./pages/Signup_Page";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      {/* <Signup></Signup> */}
-      <Login></Login>
-      
-      
-    </div>
+    // <Suspense fallback={<SimpleBackdrop />}>
+    //   <BrowserRouter>
+    //     <Navbars /> {/* Render the Navbars component */}
+    //     <Routes>
+    //       <Route path="/" element={<Home />} />
+    //       <Route path="/about" element={<About />} />
+    //       <Route path="/shop" element={<Contact />} />
+    //       <Route path="/furniture" element={<Contact />} />
+    //       <Route path="/contact" element={<Contact />} />
+    //       <Route path="/profile" element={<Contact />} />
+
+
+    //       <Route path="/signup" element={<SignupPage />} />
+
+
+
+    //       <Route path="/login" element={<Login />} />
+    //     </Routes>
+    //   </BrowserRouter>
+    // </Suspense>
+    // <SignupPage></SignupPage>
+    <Signup></Signup>
   );
 }
 
