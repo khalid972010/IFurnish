@@ -6,7 +6,11 @@ const Navbars = () => {
   return (
     <div>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          style={{ color: "#24d278", fontSize: "22px", fontWeight: "bold" }}
+        >
           IFurnish
         </Navbar.Brand>{" "}
         {/* Use Link instead of anchor tag */}
