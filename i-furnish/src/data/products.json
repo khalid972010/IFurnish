@@ -1,0 +1,164 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Comfy Armchair",
+      "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
+      "category": "chair",
+      "price": 199.99,
+      "image": "armchair.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Elegant Sofa",
+      "description": "Add a touch of sophistication to your home with this elegant sofa. Its sleek design and comfortable seating make it ideal for entertaining guests or lounging with a book.",
+      "category": "couch",
+      "price": 499.99,
+      "image": "sofa.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Cozy Bed",
+      "description": "Get a good night's sleep on this cozy bed. Its sturdy wooden frame and plush mattress provide the perfect combination of comfort and support.",
+      "category": "bed",
+      "price": 299.99,
+      "image": "bed.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Modern Rug",
+      "description": "Add a pop of color and texture to any room with this modern rug. Its bold design and soft fibers make it a stylish and functional accent piece.",
+      "category": "rug",
+      "price": 79.99,
+      "image": "rug.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Leather Recliner",
+      "description": "Relax in style with this luxurious leather recliner. Its smooth reclining mechanism and plush padding make it the ultimate spot for watching TV or taking a nap.",
+      "category": "chair",
+      "price": 349.99,
+      "image": "recliner.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Convertible Futon",
+      "description": "Maximize your space with this versatile convertible futon. It easily converts from a sofa to a bed, making it perfect for overnight guests or small living spaces.",
+      "category": "couch",
+      "price": 249.99,
+      "image": "futon.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Platform Bed",
+      "description": "Achieve a sleek, modern look with this platform bed. Its low-profile design and clean lines make it a stylish addition to any bedroom.",
+      "category": "bed",
+      "price": 399.99,
+      "image": "platform_bed.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Shaggy Shag Rug",
+      "description": "Sink your feet into luxury with this shaggy shag rug. Its thick, plush pile adds warmth and comfort to any room, while its neutral color complements any decor.",
+      "category": "rug",
+      "price": 129.99,
+      "image": "shag_rug.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Velvet Accent Chair",
+      "description": "Make a statement with this glamorous velvet accent chair. Its bold color and sleek design add a touch of luxury to any room.",
+      "category": "chair",
+      "price": 179.99,
+      "image": "accent_chair.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Sectional Sofa",
+      "description": "Create the perfect seating arrangement with this versatile sectional sofa. Its modular design allows you to customize it to fit your space and style.",
+      "category": "couch",
+      "price": 799.99,
+      "image": "sectional_sofa.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Canopy Bed",
+      "description": "Sleep like royalty in this elegant canopy bed. Its four-poster design and luxurious drapes create a sense of opulence and romance.",
+      "category": "bed",
+      "price": 899.99,
+      "image": "canopy_bed.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Bohemian Area Rug",
+      "description": "Infuse your space with bohemian charm with this eclectic area rug. Its vibrant colors and intricate patterns make it a statement piece in any room.",
+      "category": "rug",
+      "price": 149.99,
+      "image": "bohemian_rug.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Mid-Century Armchair",
+      "description": "Add a touch of retro flair to your home with this mid-century armchair. Its iconic design and comfortable cushioning make it a timeless addition to any living space.",
+      "category": "chair",
+      "price": 299.99,
+      "image": "mid_century_armchair.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Linen Sleeper Sofa",
+      "description": "Make the most of your space with this versatile linen sleeper sofa. Its fold-out bed provides extra sleeping space for overnight guests, while its linen upholstery adds a touch of sophistication.",
+      "category": "couch",
+      "price": 599.99,
+      "image": "sleeper_sofa.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Wooden Platform Bed",
+      "description": "Achieve a minimalist look with this wooden platform bed. Its simple, yet stylish design and sturdy construction make it a timeless addition to any bedroom.",
+      "category": "bed",
+      "price": 349.99,
+      "image": "wooden_platform_bed.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Geometric Area Rug",
+      "description": "Add a modern touch to your space with this geometric area rug. Its bold pattern and vibrant colors make it a striking focal point in any room.",
+      "category": "rug",
+      "price": 99.99,
+      "image": "geometric_rug.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Rocking Chair",
+      "description": "Relax and unwind in this classic rocking chair. Its smooth rocking motion and ergonomic design make it the perfect spot to read a book or enjoy a cup of tea.",
+      "category": "chair",
+      "price": 149.99,
+      "image": "rocking_chair.jpg"
+    },
+    {
+      "id": 18,
+      "name": "L-shaped Sectional",
+      "description": "Maximize seating and comfort with this L-shaped sectional. Its spacious design and plush cushions provide plenty of room for lounging and entertaining.",
+      "category": "couch",
+      "price": 899.99,
+      "image": "l_shaped_sectional.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Sleigh Bed",
+      "description": "Add a touch of elegance to your bedroom with this sleigh bed. Its curved headboard and footboard create a graceful silhouette, while its sturdy construction ensures years of use.",
+      "category": "bed",
+      "price": 549.99,
+      "image": "sleigh_bed.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Moroccan Area Rug",
+      "description": "Bring a touch of exotic flair to your home with this Moroccan area rug. Its intricate patterns and rich colors add warmth and texture to any room.",
+      "category": "rug",
+      "price": 179.99,
+      "image": "moroccan_rug.jpg"
+    }
+  ]
+}

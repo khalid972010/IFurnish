@@ -14,6 +14,8 @@ import Item from "../components/item";
 import LoginPage from "../pages/Login_Page";
 import Cart from "../pages/cart";
 import Profile from "../pages/profile";
+import { Provider } from "react-redux";
+import store from "../redux/store/store";
 
 function App() {
   const [hideFooter, setHideFooter] = useState(false);
@@ -24,23 +26,25 @@ function App() {
 
   return (
     <Suspense fallback={<SimpleBackdrop />}>
-      <BrowserRouter>
-        <Navbars onHideFooter={onHideFooter} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/furniture" element={<Furniture />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/footer" element={<Footer />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/item" element={<Item />} />
-        </Routes>
-        {/* <Footer></Footer> */}
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbars onHideFooter={onHideFooter} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/furniture" element={<Furniture />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/footer" element={<Footer />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/item" element={<Item />} />
+          </Routes>
+          {/* <Footer></Footer> */}
+        </BrowserRouter>
+      </Provider>
     </Suspense>
   );
 }

@@ -3,31 +3,44 @@ import "../styles/category.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBed,
-  faChain,
   faChair,
   faCouch,
   faQuestion,
   faRug,
-  faTable,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  toggleCategory,
+  getPrdsByCategories,
+} from "../redux/store/slices/product-slice";
 
 const Category = (props) => {
+  const dispatch = useDispatch();
+  const selectedCategories = useSelector(
+    (state) => state.products.selectedCategories
+  );
+  function handleOnClick() {
+    dispatch(toggleCategory(props.type));
+    dispatch(getPrdsByCategories(selectedCategories));
+    console.log(selectedCategories);
+  }
+
   return (
-    <div>
+    <div onClick={handleOnClick}>
       <div className="checkbox-wrapper-16 ">
         <label className="checkbox-wrapper">
-          <input className="checkbox-input" type="checkbox" />
+          <input className="checkbox-input" type="checkbox" readOnly />
           <span className="checkbox-tile">
             <span className="checkbox-icon">
               <FontAwesomeIcon
                 icon={
-                  props.type === "Chair"
+                  props.type === "chair"
                     ? faChair
-                    : props.type === "Bed"
+                    : props.type === "bed"
                     ? faBed
-                    : props.type === "Couch"
+                    : props.type === "couch"
                     ? faCouch
-                    : props.type === "Rug"
+                    : props.type === "rug"
                     ? faRug
                     : faQuestion
                 }
