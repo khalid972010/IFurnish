@@ -3,6 +3,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import AccountMenu from "./accountMenu";
 
 const Navbars = ({ onHideFooter }) => {
   const handleNavbarClick = (path) => {
@@ -80,13 +81,7 @@ const Navbars = ({ onHideFooter }) => {
             >
               <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/profile"
-              onClick={() => handleNavbarClick("/profile")}
-            >
-              <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
-            </Nav.Link>
+            <AccountMenu></AccountMenu>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -13,6 +13,7 @@ import Furniture from "../pages/furniture";
 import Item from "../components/item";
 import LoginPage from "../pages/Login_Page";
 import Cart from "../pages/cart";
+import Profile from "../pages/profile";
 
 function App() {
   const [hideFooter, setHideFooter] = useState(false);
@@ -31,7 +32,7 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/furniture" element={<Furniture />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/profile" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
