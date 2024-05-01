@@ -104,7 +104,6 @@ const cartSlice = createSlice({
       saveState(newState);
       return newState;
     },
-
     decreaseQuantity(state, action) {
       const id = action.payload;
       const updatedCartItems = state.cartItems.map((item) => {
