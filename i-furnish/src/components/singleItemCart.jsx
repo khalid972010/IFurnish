@@ -50,8 +50,7 @@ const SingleItemCart = (props) => {
         {/* Image */}
         <div
           className="bg-image hover-overlay hover-zoom ripple rounded"
-          data-mdb-ripple-color="light"
-        >
+          data-mdb-ripple-color="light">
           <img src={image} className="w-100" alt="MATCHSPEL" />
           <a href="#!">
             <div
@@ -79,8 +78,7 @@ const SingleItemCart = (props) => {
           style={{
             backgroundColor: "#24d278",
             border: "0px",
-          }}
-        >
+          }}>
           <FontAwesomeIcon icon={faTrash} />
         </button>
         <button
@@ -89,8 +87,7 @@ const SingleItemCart = (props) => {
           data-mdb-tooltip-init
           title="Move to the wish list"
           style={{ border: "0px" }}
-          onClick={handelAddToFavorites}
-        >
+          onClick={handelAddToFavorites}>
           <FontAwesomeIcon icon={faHeart} />
         </button>
         {/* Data */}
@@ -105,11 +102,10 @@ const SingleItemCart = (props) => {
               backgroundColor: "#24d278",
               border: "0px",
             }}
-            onClick={handleDecrement}
-          >
+            onClick={handleDecrement}>
             <FontAwesomeIcon icon={faMinus} />
           </button>
-          <div className="form-outline">
+          <div className="form-outline ">
             <input
               ref={quantityRef}
               id="quantity1"
@@ -124,12 +120,10 @@ const SingleItemCart = (props) => {
             className="btn btn-primary px-3 m-0"
             style={{
               height: "37px",
-              marginLeft: "3px",
               backgroundColor: "#24d278",
               border: "0px",
             }}
-            onClick={handleIncrement}
-          >
+            onClick={handleIncrement}>
             <FontAwesomeIcon icon={faPlus} />
           </button>
         </div>

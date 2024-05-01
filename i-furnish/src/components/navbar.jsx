@@ -20,8 +20,7 @@ const Navbars = ({ onHideFooter }) => {
         <Navbar.Brand
           as={Link}
           to="/"
-          style={{ color: "#24d278", fontSize: "22px", fontWeight: "bold" }}
-        >
+          style={{ color: "#24d278", fontSize: "22px", fontWeight: "bold" }}>
           IFurnish
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -33,36 +32,32 @@ const Navbars = ({ onHideFooter }) => {
             <Nav.Link
               as={Link}
               to="/about"
-              onClick={() => handleNavbarClick("/about")}
-            >
+              onClick={() => handleNavbarClick("/about")}>
               About
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/favorites"
-              onClick={() => handleNavbarClick("/favorites")}
-            >
+              onClick={() => handleNavbarClick("/favorites")}>
               Favorites
             </Nav.Link>
+
             <Nav.Link
               as={Link}
               to="/shop"
-              onClick={() => handleNavbarClick("/shop")}
-            >
+              onClick={() => handleNavbarClick("/shop")}>
               Shop
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/furniture"
-              onClick={() => handleNavbarClick("/furniture")}
-            >
+              onClick={() => handleNavbarClick("/furniture")}>
               Trending
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/contact"
-              onClick={() => handleNavbarClick("/contact")}
-            >
+              onClick={() => handleNavbarClick("/contact")}>
               Contact
             </Nav.Link>
           </Nav>
@@ -70,22 +65,19 @@ const Navbars = ({ onHideFooter }) => {
             <Nav.Link
               as={Link}
               to="/signup"
-              onClick={() => handleNavbarClick("/signup")}
-            >
+              onClick={() => handleNavbarClick("/signup")}>
               Signup
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/login"
-              onClick={() => handleNavbarClick("/login")}
-            >
+              onClick={() => handleNavbarClick("/login")}>
               Login
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/cart"
-              onClick={() => handleNavbarClick("/cart")}
-            >
+              onClick={() => handleNavbarClick("/cart")}>
               <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
             </Nav.Link>
             <AccountMenu></AccountMenu>
