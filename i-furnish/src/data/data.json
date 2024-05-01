@@ -118,13 +118,12 @@
       ],
       "wishlist": [
         {
-          "id": "1",
-          "name": "Comfy Armchair",
-          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
-          "category": "chair",
-          "price": 199.99,
-          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png",
-          "quantity": 1
+          "id": "2",
+          "name": "Elegant Sofa",
+          "description": "Add a touch of sophistication to your home with this elegant sofa. Its sleek design and comfortable seating make it ideal for entertaining guests or lounging with a book.",
+          "category": "couch",
+          "price": 499.99,
+          "image": "https://i.pinimg.com/originals/3e/06/3d/3e063dbea335dd01a2b9f08e8483e221.png"
         }
       ]
     }

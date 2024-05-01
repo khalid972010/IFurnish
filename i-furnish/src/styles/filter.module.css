@@ -1,0 +1,28 @@
+.formSelect {
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid #24d278; /* Green border */
+  background-color: #f0f0f0; /* Light grey background */
+  color: #333; /* Dark grey text color */
+  outline: none; /* Remove default focus outline */
+  border-radius: 20px;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s; /* Smooth transition effect */
+}
+
+.formSelect:hover {
+  border-color: #18a05d; /* Darker green border on hover */
+}
+
+.formSelect:focus {
+  border-color: #18a05d; /* Darker green border on focus */
+}
+
+.formSelectLg {
+  font-size: 20px; /* Larger font size */
+  padding: 12px 20px; /* Larger padding */
+}
+
+.mb3 {
+  margin-bottom: 1rem; /* Add margin bottom */
+}
