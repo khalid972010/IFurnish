@@ -25,9 +25,16 @@ const Profile = () => {
       setFirstName(user.firstName);
       setLastName(user.lastName);
       setEmail(user.email);
-      setPhoneNumber(user.phone ?? "");
+      setPhoneNumber(user.phoneNumber ?? "");
     }
-  }, [dispatch, user.email, user.firstName, user.lastName, user.phone, userID]);
+  }, [
+    dispatch,
+    user.email,
+    user.firstName,
+    user.lastName,
+    user.phoneNumber,
+    userID,
+  ]);
 
   const validateName = (name) => {
     return /^[A-Za-z]+$/.test(name);

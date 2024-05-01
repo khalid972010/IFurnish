@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
   cartItems: [],
@@ -6,9 +7,10 @@ const initialState = {
   error: null,
 };
 
-const loadState = () => {
+const loadState = async () => {
   try {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const userID = JSON.parse(localStorage.getItem("userID"));
+    const user = await axios.get(`http://localhost:3001/users/${userID}`);
     if (user && user.cart) {
       return user.cart;
     }
@@ -18,11 +20,12 @@ const loadState = () => {
   return initialState;
 };
 
-const saveState = (state) => {
+const saveState = async (state) => {
   try {
-    const user = JSON.parse(localStorage.getItem("user")) || {};
+    const userID = JSON.parse(localStorage.getItem("userID"));
+    const user = await axios.get(`http://localhost:3001/users/${userID}`);
     user.cart = state.cartItems;
-    localStorage.setItem("user", JSON.stringify(user));
+    axios.patch(`http://localhost:3001/users/${userID}`, { cart: user.cart });
   } catch (error) {
     console.error("Error saving state to localStorage:", error);
   }

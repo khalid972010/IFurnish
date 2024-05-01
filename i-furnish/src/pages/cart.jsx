@@ -28,7 +28,7 @@ const Cart = () => {
                   className="card-header py-3"
                   style={{ backgroundColor: "#24d278", color: "white" }}
                 >
-                  <h5 className="mb-0">Cart - {cart.length} items</h5>
+                  <h5 className="mb-0">Cart - {cart?.length} items</h5>
                 </div>
                 <div className="card-body">
                   {/* Single item */}
@@ -88,7 +88,7 @@ const Cart = () => {
                     type="button"
                     className="btn btn-primary btn-lg btn-block"
                     style={{ backgroundColor: "#24d278", border: "0px" }}
-                    disabled={cart.length === 0}
+                    disabled={!cart?.length}
                   >
                     Go to checkout
                   </button>

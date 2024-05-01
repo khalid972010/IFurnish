@@ -104,7 +104,8 @@
       "firstName": "Mazen",
       "lastName": "Ayman",
       "agreedToTerms": "on",
-      "phoneNumber": "01022936472"
+      "phoneNumber": "01022936472",
+      "cart": []
     }
   ],
   "products": [
