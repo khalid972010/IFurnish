@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
+import "../styles/category.css";
 import { Link } from "react-router-dom";
 import ShopCard from "../components/shopCard";
 import Category from "../components/category";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getAllPrds,
-  toggleCategory,
-} from "../redux/store/slices/product-slice";
+import { getAllPrds } from "../redux/store/slices/product-slice";
 
 const Shop = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
   const [isShown, setIsShown] = useState(false);
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState(new Set());
 
   useEffect(() => {
     dispatch(getAllPrds());
@@ -23,15 +21,15 @@ const Shop = () => {
   }
 
   function handleOnClick(type) {
-    setSelectedCategories((oldState) => {
-      const index = oldState.indexOf(type);
-      if (index === -1) {
-        return [...oldState, type];
+    setSelectedCategories((prevCategories) => {
+      const newCategories = new Set(prevCategories);
+      if (newCategories.has(type)) {
+        newCategories.delete(type);
       } else {
-        return oldState.filter((cat) => cat === type);
+        newCategories.add(type);
       }
+      return newCategories;
     });
-    console.log(selectedCategories);
   }
 
   return (
@@ -39,9 +37,9 @@ const Shop = () => {
       <section className="brand_section layout_padding">
         <div className="container">
           <div className="heading_container">
-            <h2>Categories</h2>
+            <h2 style={{ marginTop: -20 }}>Categories</h2>
           </div>
-          <div className="categories ">
+          <div style={{ marginLeft: -14, marginBottom: 20, marginTop: 10 }}>
             <Category type="chair" onClick={() => handleOnClick("chair")} />
             <Category type="couch" onClick={() => handleOnClick("couch")} />
             <Category type="bed" onClick={() => handleOnClick("bed")} />
@@ -53,15 +51,20 @@ const Shop = () => {
 
           <div
             className="brand_container layout_padding1 "
-            style={{ width: "75vw" }}
-          >
+            style={{ width: "75vw" }}>
             {isShown
-              ? products.map((e) => <ShopCard key={e.id} {...e} />)
+              ? products
+                  ?.filter((product) =>
+                    selectedCategories.size === 0
+                      ? true
+                      : selectedCategories.has(product.category)
+                  )
+                  .map((e) => <ShopCard key={e.id} {...e} />)
               : products
                   ?.filter((product) =>
-                    selectedCategories.length === 0
+                    selectedCategories.size === 0
                       ? true
-                      : selectedCategories.includes(product.category)
+                      : selectedCategories.has(product.category)
                   )
                   .slice(0, 4)
                   .map((e) => <ShopCard key={e.id} {...e} />)}

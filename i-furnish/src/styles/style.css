@@ -54,7 +54,7 @@ body {
   transform: translate(100%, -50%);
 }
 
-/*header section*/
+/header section/
 .hero_area {
   height: 100vh;
   background-image: "../images/hero-bg.jpg";
@@ -220,7 +220,7 @@ a:focus {
   text-transform: uppercase;
 }
 
-/*end header section*/
+/end header section/
 /* slider section */
 .slider_section {
   height: calc(90% - 70px);
@@ -348,7 +348,7 @@ a:focus {
 }
 
 .slider_section .img-container .img-box {
-  width: 250px;
+  width: 600px;
 }
 
 .slider_section .img-container .img-box img {
