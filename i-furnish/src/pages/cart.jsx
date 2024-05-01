@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cartItems);
+  const selector = useSelector((state) => state);
+  console.log(selector);
 
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -13,7 +15,7 @@ const Cart = () => {
         (sum, product) => sum + product.price * product.quantity,
         0
       );
-      setTotalPrice(price);
+      setTotalPrice(parseFloat(price.toFixed(2)));
     }
   }, [cart]);
 
@@ -64,7 +66,9 @@ const Cart = () => {
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                       Products
-                      <span style={{ color: "green" }}>{totalPrice}$</span>
+                      <span style={{ color: "green" }}>
+                        {totalPrice.toFixed(2)}$
+                      </span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                       Shipping
@@ -79,14 +83,14 @@ const Cart = () => {
                       </div>
                       <span>
                         <strong style={{ color: "green" }}>
-                          {totalPrice}$
+                          {totalPrice.toFixed(2)}$
                         </strong>
                       </span>
                     </li>
                   </ul>
                   <button
                     type="button"
-                    className="btn btn-primary btn-lg btn-block"
+                    className="btn btn-primary btn-lg btn-block m-0"
                     style={{ backgroundColor: "#24d278", border: "0px" }}
                     disabled={!cart?.length}
                   >
