@@ -34,7 +34,10 @@ const Cart = () => {
                   {/* Single item */}
                   {cart &&
                     cart.map((item) => (
-                      <SingleItemCart key={item.id} {...item}></SingleItemCart>
+                      <div key={item.id}>
+                        <SingleItemCart {...item} />
+                        <hr className="my-4" />
+                      </div>
                     ))}
                   {/* Single item */}
                   {/* <hr className="my-4" /> */}

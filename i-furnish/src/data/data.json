@@ -95,6 +95,16 @@
       "agreedToTerms": "on",
       "cart": [],
       "wishlist": []
+    },
+    {
+      "id": "5559",
+      "email": "mazenaymanmo22@gmail.com",
+      "password": "Mazen123",
+      "confirmPassword": "Mazen123",
+      "firstName": "Mazen",
+      "lastName": "Ayman",
+      "agreedToTerms": "on",
+      "phoneNumber": "01022936472"
     }
   ],
   "products": [

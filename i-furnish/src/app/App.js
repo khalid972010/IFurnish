@@ -43,23 +43,9 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/item/:id" element={<Item />} />
           </Routes>
-          {/* <Footer></Footer> */}
+          {hideFooter && <Footer></Footer>}
         </BrowserRouter>
       </Provider>
-      <BrowserRouter>
-        <Navbars />
-        <Routes>
-          <Route path="/" element={<Home />} />{" "}
-          <Route path="/about" element={<About />} />{" "}
-          <Route path="/favorites" element={<Favorites />} />{" "}
-          <Route path="/item" element={<Item />} />{" "}
-          <Route path="shop" element={<Shop />} />{" "}
-          <Route path="furniture" element={<Furniture />} />{" "}
-          <Route path="contact" element={<Contact />} />{" "}
-          <Route path="profile" element={<Contact />} />{" "}
-        </Routes>
-        <Footer></Footer>
-      </BrowserRouter>
     </Suspense>
   );
 }
