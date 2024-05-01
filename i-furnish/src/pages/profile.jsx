@@ -1,7 +1,86 @@
-import { green } from "@mui/material/colors";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { UpdateProfile, getProfile } from "../redux/store/slices/profile-slice";
 
 const Profile = () => {
+  const [userID, setID] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [firstNameError, setFirstNameError] = useState("");
+  const [lastNameError, setLastNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.profile.profile);
+  useEffect(() => {
+    const userID = localStorage.getItem("userID");
+    setID(userID);
+  }, []);
+
+  useEffect(() => {
+    if (userID) {
+      dispatch(getProfile(userID));
+      setFirstName(user.firstName);
+      setLastName(user.lastName);
+      setEmail(user.email);
+      setPhoneNumber(user.phone ?? "");
+    }
+  }, [dispatch, user.email, user.firstName, user.lastName, user.phone, userID]);
+
+  const validateName = (name) => {
+    return /^[A-Za-z]+$/.test(name);
+  };
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const validatePhoneNumber = (phone) => {
+    const re = /^01[0-2]\d{8}$/;
+    return re.test(phone);
+  };
+
+  const handleSaveProfile = () => {
+    if (!validateName(firstName)) {
+      setFirstNameError("Please enter a valid first name");
+      return;
+    }
+    setFirstNameError("");
+
+    if (!validateName(lastName)) {
+      setLastNameError("Please enter a valid last name");
+      return;
+    }
+    setLastNameError("");
+
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address");
+      return;
+    }
+    setEmailError("");
+
+    if (!validatePhoneNumber(phoneNumber)) {
+      setPhoneError("Please enter a valid phone number");
+      return;
+    }
+    setPhoneError("");
+
+    dispatch(
+      UpdateProfile({
+        id: userID,
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+      })
+    );
+
+    alert("Profile updated successfully!");
+  };
+
   return (
     <div className="container rounded bg-white mt-5 mb-5">
       <div
@@ -31,35 +110,67 @@ const Profile = () => {
                 <label className="labels">First Name</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={`form-control ${firstNameError && "is-invalid"}`}
                   placeholder="First name"
+                  value={firstName}
+                  onChange={(e) => {
+                    setFirstName(e.target.value);
+                    setFirstNameError("");
+                  }}
                 />
+                {firstNameError && (
+                  <div className="invalid-feedback">{firstNameError}</div>
+                )}
               </div>
               <div className="col-md-6 mt-3">
                 <label className="labels">Last Name</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className={`form-control ${lastNameError && "is-invalid"}`}
                   placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => {
+                    setLastName(e.target.value);
+                    setLastNameError("");
+                  }}
                 />
+                {lastNameError && (
+                  <div className="invalid-feedback">{lastNameError}</div>
+                )}
               </div>
             </div>
             <div className="row mt-3">
               <div className="col-md-12 mt-2">
-                <label className="labels">Mobile Number</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter Phone Number"
-                />
-              </div>
-              <div className="col-md-12 mt-4">
                 <label className="labels">Email Address</label>
                 <input
-                  type="email"
-                  className="form-control"
+                  type="text"
+                  className={`form-control ${emailError && "is-invalid"}`}
                   placeholder="Enter your mail"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setEmailError("");
+                  }}
                 />
+                {emailError && (
+                  <div className="invalid-feedback">{emailError}</div>
+                )}
+              </div>
+              <div className="col-md-12 mt-2">
+                <label className="labels">Phone Number</label>
+                <input
+                  type="text"
+                  className={`form-control ${phoneError && "is-invalid"}`}
+                  placeholder="Enter your phone number"
+                  value={phoneNumber}
+                  onChange={(e) => {
+                    setPhoneNumber(e.target.value);
+                    setPhoneError("");
+                  }}
+                />
+                {phoneError && (
+                  <div className="invalid-feedback">{phoneError}</div>
+                )}
               </div>
             </div>
             <div className="mt-5 text-center">
@@ -71,6 +182,7 @@ const Profile = () => {
                   border: "none",
                   padding: "10px 20px",
                 }}
+                onClick={handleSaveProfile}
               >
                 Save Profile
               </button>

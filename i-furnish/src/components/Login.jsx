@@ -45,6 +45,7 @@ function Login() {
         setError("Incorrect password");
         return;
       }
+      localStorage.setItem("userID", userWithEmail.id);
 
       setError("");
       setSuccess(true);
@@ -58,7 +59,7 @@ function Login() {
 
   return (
     <ThemeProvider theme={createTheme()}>
-      <Grid container component="main" sx={{ height: "100vh"}}>
+      <Grid container component="main" sx={{ height: "100vh" }}>
         <CssBaseline />
         <Grid
           item
@@ -71,7 +72,6 @@ function Login() {
             backgroundRepeat: "no-repeat",
             backgroundColor: "#66bb6a",
             backgroundSize: "100% 100%",
-
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
@@ -85,12 +85,15 @@ function Login() {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: "#66bb6a", width: 80, height: 80 }}>
-              <LoginIcon  sx={{ fontSize: "2.5rem"} } ></LoginIcon>
+              <LoginIcon sx={{ fontSize: "2.5rem" }}></LoginIcon>
             </Avatar>
-<Typography component="h1" variant="h5" sx={{ color: "#66bb6a", marginRight: "390px", marginTop: "20px" }}>
-  Login
-</Typography>
-
+            <Typography
+              component="h1"
+              variant="h5"
+              sx={{ color: "#66bb6a", marginRight: "390px", marginTop: "20px" }}
+            >
+              Login
+            </Typography>
 
             <Box
               component="form"
@@ -110,9 +113,10 @@ function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 sx={{
-                  "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "#66bb6a",
-                  },
+                  "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+                    {
+                      borderColor: "#66bb6a",
+                    },
                   "& .MuiInputLabel-outlined.Mui-focused": {
                     color: "#66bb6a",
                   },
@@ -130,16 +134,21 @@ function Login() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 sx={{
-                  "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "#66bb6a",
-                  },
+                  "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+                    {
+                      borderColor: "#66bb6a",
+                    },
                   "& .MuiInputLabel-outlined.Mui-focused": {
                     color: "#66bb6a",
                   },
                 }}
               />
               {error && (
-                <Typography variant="body2" color="error" sx={{ marginTop: "10px" }}>
+                <Typography
+                  variant="body2"
+                  color="error"
+                  sx={{ marginTop: "10px" }}
+                >
                   {error}
                 </Typography>
               )}
@@ -149,14 +158,22 @@ function Login() {
                 </Typography>
               )}
 
-<div style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{ display: "flex", justifyContent: "center" }}>
                 <Button
                   type="submit"
                   width="100%"
                   variant="contained"
-                  sx={{ mt: 5, mb: 2, bgcolor: "#66bb6a", "&:hover": { bgcolor: "#4caf50" },width:"200px" ,marginTop:"40px",marginBottom:"20px"}}
+                  sx={{
+                    mt: 5,
+                    mb: 2,
+                    bgcolor: "#66bb6a",
+                    "&:hover": { bgcolor: "#4caf50" },
+                    width: "200px",
+                    marginTop: "40px",
+                    marginBottom: "20px",
+                  }}
                 >
-                 Login
+                  Login
                 </Button>
               </div>
               <FormControlLabel
@@ -170,7 +187,11 @@ function Login() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2" sx={{ color: "#66bb6a" }}>
+                  <Link
+                    href="/signup"
+                    variant="body2"
+                    sx={{ color: "#66bb6a" }}
+                  >
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
