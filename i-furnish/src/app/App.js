@@ -19,10 +19,9 @@ import store from "../redux/store/store";
 
 import Favorites from "../pages/favorites";
 function App() {
-  const [hideFooter, setHideFooter] = useState(true);
+  const [hideFooter, setHideFooter] = useState(false);
 
   const onHideFooter = (value) => {
-    console.log(hideFooter);
     setHideFooter(value);
   };
 
