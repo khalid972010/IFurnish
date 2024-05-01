@@ -8,26 +8,11 @@ import {
   faQuestion,
   faRug,
 } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  toggleCategory,
-  getPrdsByCategories,
-} from "../redux/store/slices/product-slice";
 
 const Category = (props) => {
-  const dispatch = useDispatch();
-  const selectedCategories = useSelector(
-    (state) => state.products.selectedCategories
-  );
-  function handleOnClick() {
-    dispatch(toggleCategory(props.type));
-    dispatch(getPrdsByCategories(selectedCategories));
-    console.log(selectedCategories);
-  }
-
   return (
-    <div onClick={handleOnClick}>
-      <div className="checkbox-wrapper-16 ">
+    <div>
+      <div className="checkbox-wrapper-16 " onClick={props.onClick}>
         <label className="checkbox-wrapper">
           <input className="checkbox-input" type="checkbox" readOnly />
           <span className="checkbox-tile">

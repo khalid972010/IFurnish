@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SingleItemCart from "../components/singleItemCart";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart.cartItems);
+
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    if (cart) {
+      const price = cart.reduce(
+        (sum, product) => sum + product.price * product.quantity,
+        0
+      );
+      setTotalPrice(price);
+    }
+  }, [cart]);
+
   return (
     <div>
       <section className="h-100 gradient-custom">
@@ -13,11 +28,14 @@ const Cart = () => {
                   className="card-header py-3"
                   style={{ backgroundColor: "#24d278", color: "white" }}
                 >
-                  <h5 className="mb-0">Cart - 1 items</h5>
+                  <h5 className="mb-0">Cart - {cart.length} items</h5>
                 </div>
                 <div className="card-body">
                   {/* Single item */}
-                  <SingleItemCart></SingleItemCart>
+                  {cart &&
+                    cart.map((item) => (
+                      <SingleItemCart key={item.id} {...item}></SingleItemCart>
+                    ))}
                   {/* Single item */}
                   {/* <hr className="my-4" /> */}
                 </div>
@@ -27,7 +45,7 @@ const Cart = () => {
                   <p>
                     <strong>Expected shipping delivery</strong>
                   </p>
-                  <p className="mb-0">12.10.2020 - 14.10.2020</p>
+                  <p className="mb-0">06.05.2024 - 08.05.2024</p>
                 </div>
               </div>
             </div>
@@ -43,7 +61,7 @@ const Cart = () => {
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                       Products
-                      <span style={{ color: "green" }}>$53.98</span>
+                      <span style={{ color: "green" }}>{totalPrice}$</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center px-0">
                       Shipping
@@ -57,7 +75,9 @@ const Cart = () => {
                         </strong>
                       </div>
                       <span>
-                        <strong style={{ color: "green" }}>$53.98</strong>
+                        <strong style={{ color: "green" }}>
+                          {totalPrice}$
+                        </strong>
                       </span>
                     </li>
                   </ul>
@@ -65,6 +85,7 @@ const Cart = () => {
                     type="button"
                     className="btn btn-primary btn-lg btn-block"
                     style={{ backgroundColor: "#24d278", border: "0px" }}
+                    disabled={cart.length === 0}
                   >
                     Go to checkout
                   </button>

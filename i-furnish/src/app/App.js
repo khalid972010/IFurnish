@@ -17,6 +17,7 @@ import Profile from "../pages/profile";
 import { Provider } from "react-redux";
 import store from "../redux/store/store";
 
+import Favorites from "../pages/favorites";
 function App() {
   const [hideFooter, setHideFooter] = useState(false);
 
@@ -40,11 +41,25 @@ function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/item" element={<Item />} />
+            <Route path="/item/:id" element={<Item />} />
           </Routes>
           {/* <Footer></Footer> */}
         </BrowserRouter>
       </Provider>
+      <BrowserRouter>
+        <Navbars />
+        <Routes>
+          <Route path="/" element={<Home />} />{" "}
+          <Route path="/about" element={<About />} />{" "}
+          <Route path="/favorites" element={<Favorites />} />{" "}
+          <Route path="/item" element={<Item />} />{" "}
+          <Route path="shop" element={<Shop />} />{" "}
+          <Route path="furniture" element={<Furniture />} />{" "}
+          <Route path="contact" element={<Contact />} />{" "}
+          <Route path="profile" element={<Contact />} />{" "}
+        </Routes>
+        <Footer></Footer>
+      </BrowserRouter>
     </Suspense>
   );
 }
