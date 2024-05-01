@@ -39,6 +39,18 @@ const Navbars = ({ onHideFooter }) => {
             </Nav.Link>
             <Nav.Link
               as={Link}
+              to="/favorites"
+              onClick={() => handleNavbarClick("/favorites")}
+            >
+              Favorites
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              to="/shop"
+              onClick={() => handleNavbarClick("/shop")}
+            ></Nav.Link>
+            <Nav.Link
+              as={Link}
               to="/shop"
               onClick={() => handleNavbarClick("/shop")}
             >

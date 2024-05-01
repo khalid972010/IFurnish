@@ -105,7 +105,28 @@
       "lastName": "Ayman",
       "agreedToTerms": "on",
       "phoneNumber": "01022936472",
-      "cart": []
+      "cart": [
+        {
+          "id": "1",
+          "name": "Comfy Armchair",
+          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
+          "category": "chair",
+          "price": 199.99,
+          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png",
+          "quantity": 1
+        }
+      ],
+      "wishlist": [
+        {
+          "id": "1",
+          "name": "Comfy Armchair",
+          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
+          "category": "chair",
+          "price": 199.99,
+          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png",
+          "quantity": 1
+        }
+      ]
     }
   ],
   "products": [

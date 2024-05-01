@@ -68,6 +68,7 @@ const cartSlice = createSlice({
         return state;
       }
     },
+
     removeItemFromCart(state, action) {
       const id = action.payload;
       const newState = {

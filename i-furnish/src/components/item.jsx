@@ -4,11 +4,13 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import classes from "../styles/itemStyle.module.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../redux/store/slices/cart-slice";
+import { addItemToFavorites } from "../redux/store/slices/wish-list-slice";
 
 const Item = () => {
   const [item, setItem] = useState(null);
+  const [isFavorite, setIsFavorite] = useState(false); // State to track if the item is in favorites
   const params = useParams();
   const dispatch = useDispatch();
 
@@ -28,6 +30,11 @@ const Item = () => {
 
   const handleOnClick = async () => {
     dispatch(addItemToCart(item));
+  };
+
+  const handleOnFav = async () => {
+    dispatch(addItemToFavorites(item));
+    setIsFavorite(!isFavorite); // Toggle the favorite state
   };
 
   if (!item) {
@@ -68,20 +75,24 @@ const Item = () => {
               style={{
                 marginRight: "10px",
                 width: "80%",
-                backgroundColor: "#24d278",
+                backgroundColor: "#24d278", // Green color
               }}
             >
               Add to Cart
             </button>
           )}
           <button
+            onClick={handleOnFav}
             className={`${classes.like} ${classes.btnItem}`}
             style={{
               width: "15%",
-              backgroundColor: "#24d278",
+              backgroundColor: "transparent",
             }}
           >
-            <FontAwesomeIcon icon={faHeart} style={{ height: "19px" }} />
+            <FontAwesomeIcon
+              icon={faHeart}
+              style={{ color: isFavorite ? "red" : "#24d278", height: "19px" }}
+            />
           </button>
         </div>
       </div>

@@ -12,10 +12,15 @@ import {
   decreaseQuantity,
   removeItemFromCart,
 } from "../redux/store/slices/cart-slice";
+import { addItemToFavorites } from "../redux/store/slices/wish-list-slice";
+import Item from "./item";
 
 const SingleItemCart = (props) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
+  console.log(props);
+  const cartItem = cart.cartItem;
+  console.log(cartItem);
 
   let { name, category, image, price, id, quantity } = props;
   const quantityRef = useRef(1);
@@ -34,6 +39,9 @@ const SingleItemCart = (props) => {
 
   const handleDelete = () => {
     dispatch(removeItemFromCart(id));
+  };
+  const handelAddToFavorites = async () => {
+    dispatch(addItemToFavorites(props));
   };
 
   return (
@@ -82,6 +90,7 @@ const SingleItemCart = (props) => {
           data-mdb-tooltip-init
           title="Move to the wish list"
           style={{ border: "0px" }}
+          onClick={handelAddToFavorites}
         >
           <FontAwesomeIcon icon={faHeart} />
         </button>
