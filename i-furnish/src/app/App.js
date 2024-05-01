@@ -40,7 +40,7 @@ function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/item" element={<Item />} />
+            <Route path="/item/:id" element={<Item />} />
           </Routes>
           {/* <Footer></Footer> */}
         </BrowserRouter>

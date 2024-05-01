@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ShopCard = (props) => {
-  const { isNew, name, price } = props;
+  const { isNew, id, name, price } = props;
   return (
     <div className="box">
-      <Link to="/item" style={{ textDecoration: "none" }}>
+      <Link to={`/item/${id}`} style={{ textDecoration: "none" }}>
         {isNew && (
           <div className="new">
             <h5>New</h5>

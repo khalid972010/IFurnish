@@ -6,18 +6,34 @@ import {
   faPlus,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addQuantity,
+  decreaseQuantity,
+  removeItemFromCart,
+} from "../redux/store/slices/cart-slice";
 
-const SingleItemCart = () => {
+const SingleItemCart = (props) => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+
+  let { name, category, image, price, id, quantity } = props;
   const quantityRef = useRef(1);
 
   const handleDecrement = () => {
     if (quantityRef.current.value > 0) {
       quantityRef.current.stepDown();
+      dispatch(decreaseQuantity(id));
     }
   };
 
   const handleIncrement = () => {
     quantityRef.current.stepUp();
+    dispatch(addQuantity(id));
+  };
+
+  const handleDelete = () => {
+    dispatch(removeItemFromCart(id));
   };
 
   return (
@@ -47,10 +63,11 @@ const SingleItemCart = () => {
       <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
         {/* Data */}
         <p>
-          <strong>MATCHSPEL</strong>
+          <strong>{name}</strong>
         </p>
-        <p>Chair</p>
+        <p>{category}</p>
         <button
+          onClick={handleDelete}
           type="button"
           className="btn btn-primary btn-sm me-3 mb-2 pe-3"
           data-mdb-tooltip-init
@@ -93,7 +110,7 @@ const SingleItemCart = () => {
             <input
               ref={quantityRef}
               id="quantity1"
-              min={0}
+              min={1}
               defaultValue={1}
               type="number"
               className="form-control"
@@ -116,7 +133,7 @@ const SingleItemCart = () => {
         {/* Quantity */}
         {/* Price */}
         <p className="text-start text-md-center">
-          <strong style={{ color: "green" }}>$17.99</strong>
+          <strong style={{ color: "green" }}>{price * quantity}$</strong>
         </p>
         {/* Price */}
       </div>

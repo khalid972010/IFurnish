@@ -22,16 +22,7 @@ const productSlice = createSlice({
     error: null,
     selectedCategories: [],
   },
-  reducers: {
-    toggleCategory: (state, action) => {
-      const index = state.selectedCategories.indexOf(action.payload);
-      if (index === -1) {
-        state.selectedCategories.push(action.payload);
-      } else {
-        state.selectedCategories.splice(index, 1);
-      }
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getAllPrds.pending, (state) => {
