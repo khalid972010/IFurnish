@@ -43,7 +43,7 @@ const Furniture = () => {
                       </div>
                       <hr />
                       <div className="t-name">
-                        <h5>Tables</h5>
+                        <h5>Couches</h5>
                       </div>
                     </div>
                     <div
@@ -58,7 +58,7 @@ const Furniture = () => {
                       </div>
                       <hr />
                       <div className="t-name">
-                        <h5>Bads</h5>
+                        <h5>Beds</h5>
                       </div>
                     </div>
                     <div
@@ -73,7 +73,7 @@ const Furniture = () => {
                       </div>
                       <hr />
                       <div className="t-name">
-                        <h5>Furnitures</h5>
+                        <h5>Rugs</h5>
                       </div>
                     </div>
                   </div>

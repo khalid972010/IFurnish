@@ -44,11 +44,7 @@ const SingleItemCart = (props) => {
           className="bg-image hover-overlay hover-zoom ripple rounded"
           data-mdb-ripple-color="light"
         >
-          <img
-            src="https://www.ikea.com/eg/en/images/products/matchspel-gaming-chair-bomstad-black__0985645_pe816716_s5.jpg?f=xl"
-            className="w-100"
-            alt="MATCHSPEL"
-          />
+          <img src={image} className="w-100" alt="MATCHSPEL" />
           <a href="#!">
             <div
               className="mask"

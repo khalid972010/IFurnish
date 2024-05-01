@@ -104,7 +104,7 @@
       "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
       "category": "chair",
       "price": 199.99,
-      "image": "armchair.jpg"
+      "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png"
     },
     {
       "id": "2",
@@ -112,7 +112,7 @@
       "description": "Add a touch of sophistication to your home with this elegant sofa. Its sleek design and comfortable seating make it ideal for entertaining guests or lounging with a book.",
       "category": "couch",
       "price": 499.99,
-      "image": "sofa.jpg"
+      "image": "https://i.pinimg.com/originals/3e/06/3d/3e063dbea335dd01a2b9f08e8483e221.png"
     },
     {
       "id": "3",
@@ -120,7 +120,7 @@
       "description": "Get a good night's sleep on this cozy bed. Its sturdy wooden frame and plush mattress provide the perfect combination of comfort and support.",
       "category": "bed",
       "price": 299.99,
-      "image": "bed.jpg"
+      "image": "https://static.vecteezy.com/system/resources/previews/026/844/938/original/minimalistic-modern-cozy-white-bed-with-pillow-and-blanket-clipart-on-transparent-background-isolated-white-mattress-cozy-white-cot-furniture-with-bed-sheets-free-png.png"
     },
     {
       "id": "4",
@@ -128,7 +128,7 @@
       "description": "Add a pop of color and texture to any room with this modern rug. Its bold design and soft fibers make it a stylish and functional accent piece.",
       "category": "rug",
       "price": 79.99,
-      "image": "rug.jpg"
+      "image": "https://png.pngtree.com/png-clipart/20221118/ourmid/pngtree-modern-carpet-png-image_6469482.png"
     },
     {
       "id": "5",
@@ -136,7 +136,7 @@
       "description": "Relax in style with this luxurious leather recliner. Its smooth reclining mechanism and plush padding make it the ultimate spot for watching TV or taking a nap.",
       "category": "chair",
       "price": 349.99,
-      "image": "recliner.jpg"
+      "image": "https://www.pngall.com/wp-content/uploads/2017/03/Recliner-Free-Download-PNG.png"
     },
     {
       "id": "6",
@@ -144,7 +144,7 @@
       "description": "Maximize your space with this versatile convertible futon. It easily converts from a sofa to a bed, making it perfect for overnight guests or small living spaces.",
       "category": "couch",
       "price": 249.99,
-      "image": "futon.jpg"
+      "image": "https://ms2.karupdesign.com/media/2057271/Karupdesign_fresh_117101914_pine_clearlacquered_linencotton_linen_packshot_1.png?w=1000&h=1000&scale=both"
     },
     {
       "id": "7",
@@ -152,15 +152,7 @@
       "description": "Achieve a sleek, modern look with this platform bed. Its low-profile design and clean lines make it a stylish addition to any bedroom.",
       "category": "bed",
       "price": 399.99,
-      "image": "platform_bed.jpg"
-    },
-    {
-      "id": "8",
-      "name": "Shaggy Shag Rug",
-      "description": "Sink your feet into luxury with this shaggy shag rug. Its thick, plush pile adds warmth and comfort to any room, while its neutral color complements any decor.",
-      "category": "rug",
-      "price": 129.99,
-      "image": "shag_rug.jpg"
+      "image": "https://floydhome.com/cdn/shop/products/Twin_Qtr_NoStorage_Post_1_1.png?v=1670946953&width=1200"
     },
     {
       "id": "9",
@@ -168,7 +160,7 @@
       "description": "Make a statement with this glamorous velvet accent chair. Its bold color and sleek design add a touch of luxury to any room.",
       "category": "chair",
       "price": 179.99,
-      "image": "accent_chair.jpg"
+      "image": "https://static.vecteezy.com/system/resources/previews/026/844/822/non_2x/minimalistic-modern-living-room-blue-armchair-seat-clipart-on-transparent-background-modern-home-decor-interior-accent-chair-living-room-furniture-living-room-decor-home-interior-decorative-element-free-png.png"
     },
     {
       "id": "10",
@@ -176,7 +168,7 @@
       "description": "Create the perfect seating arrangement with this versatile sectional sofa. Its modular design allows you to customize it to fit your space and style.",
       "category": "couch",
       "price": 799.99,
-      "image": "sectional_sofa.jpg"
+      "image": "https://static.vecteezy.com/system/resources/previews/032/325/409/original/outdoor-sectional-sofa-isolated-on-transparent-background-file-cut-out-ai-generated-png.png"
     },
     {
       "id": "11",
@@ -184,7 +176,7 @@
       "description": "Sleep like royalty in this elegant canopy bed. Its four-poster design and luxurious drapes create a sense of opulence and romance.",
       "category": "bed",
       "price": 899.99,
-      "image": "canopy_bed.jpg"
+      "image": "https://freepngimg.com/download/aquarium/45706-1-canopy-bed-image-download-free-image.png"
     },
     {
       "id": "12",
@@ -192,7 +184,7 @@
       "description": "Infuse your space with bohemian charm with this eclectic area rug. Its vibrant colors and intricate patterns make it a statement piece in any room.",
       "category": "rug",
       "price": 149.99,
-      "image": "bohemian_rug.jpg"
+      "image": "https://static.wixstatic.com/media/fde0cc_c616e35997dd42e299f839d8848402a2~mv2.png/v1/fill/w_594,h_594,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/fde0cc_c616e35997dd42e299f839d8848402a2~mv2.png"
     },
     {
       "id": "13",
@@ -200,7 +192,7 @@
       "description": "Add a touch of retro flair to your home with this mid-century armchair. Its iconic design and comfortable cushioning make it a timeless addition to any living space.",
       "category": "chair",
       "price": 299.99,
-      "image": "mid_century_armchair.jpg"
+      "image": "https://static.vecteezy.com/system/resources/previews/028/083/291/original/modern-chair-eames-lounge-chair-velvet-midcentury-modern-furniture-danish-modern-club-chair-transparent-background-generative-with-ai-free-png.png"
     },
     {
       "id": "14",
@@ -208,7 +200,7 @@
       "description": "Make the most of your space with this versatile linen sleeper sofa. Its fold-out bed provides extra sleeping space for overnight guests, while its linen upholstery adds a touch of sophistication.",
       "category": "couch",
       "price": 599.99,
-      "image": "sleeper_sofa.jpg"
+      "image": "https://zocohome.com/cdn/shop/files/zoco-home-tarifa-linen-sofa-bed-52079735275863_1024x1024.png?v=1691911504"
     },
     {
       "id": "15",
@@ -216,7 +208,7 @@
       "description": "Achieve a minimalist look with this wooden platform bed. Its simple, yet stylish design and sturdy construction make it a timeless addition to any bedroom.",
       "category": "bed",
       "price": 349.99,
-      "image": "wooden_platform_bed.jpg"
+      "image": "https://images.squarespace-cdn.com/content/v1/6095ad25a2d9703b1a35c8fb/1633973713593-GA5Q6S5YNFQ8CKZ872V8/adia-black-wood-platform-bed-removebg-preview.png?format=1500w"
     },
     {
       "id": "16",
@@ -224,7 +216,7 @@
       "description": "Add a modern touch to your space with this geometric area rug. Its bold pattern and vibrant colors make it a striking focal point in any room.",
       "category": "rug",
       "price": 99.99,
-      "image": "geometric_rug.jpg"
+      "image": "https://friendlyrugs.com/cdn/shop/products/202206253778_297382e0-c6ec-4d36-ab4f-20681d2d3148_1024x1024.png?v=1660664899"
     },
     {
       "id": "17",
@@ -232,7 +224,7 @@
       "description": "Relax and unwind in this classic rocking chair. Its smooth rocking motion and ergonomic design make it the perfect spot to read a book or enjoy a cup of tea.",
       "category": "chair",
       "price": 149.99,
-      "image": "rocking_chair.jpg"
+      "image": "https://www.pngkey.com/png/full/460-4601220_milligan-rocking-chair-rocking-chair-png-transparent.png"
     },
     {
       "id": "18",
@@ -240,7 +232,7 @@
       "description": "Maximize seating and comfort with this L-shaped sectional. Its spacious design and plush cushions provide plenty of room for lounging and entertaining.",
       "category": "couch",
       "price": 899.99,
-      "image": "l_shaped_sectional.jpg"
+      "image": "https://sounique.pk/wp-content/uploads/2019/11/l-shaped-sofa-beige.png"
     },
     {
       "id": "19",
@@ -248,7 +240,7 @@
       "description": "Add a touch of elegance to your bedroom with this sleigh bed. Its curved headboard and footboard create a graceful silhouette, while its sturdy construction ensures years of use.",
       "category": "bed",
       "price": 549.99,
-      "image": "sleigh_bed.jpg"
+      "image": "https://i.pinimg.com/originals/e1/a9/af/e1a9af714a93ba8a83e821f814fd9a48.png"
     },
     {
       "id": "20",
@@ -256,7 +248,7 @@
       "description": "Bring a touch of exotic flair to your home with this Moroccan area rug. Its intricate patterns and rich colors add warmth and texture to any room.",
       "category": "rug",
       "price": 179.99,
-      "image": "moroccan_rug.jpg"
+      "image": "https://images.squarespace-cdn.com/content/v1/62b601d2896f5f3b36b66821/1665605978477-YCETA7Z5TGY8EH5J3KVG/ALPI19+10%277_+x+13%27+Pak+Moroccan+-+Edited.png"
     }
   ]
 }

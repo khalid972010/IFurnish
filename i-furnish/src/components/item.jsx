@@ -38,17 +38,14 @@ const Item = () => {
     <div
       className={classes.container}
       style={{
-        height: "auto",
+        minHeight: "390px",
         width: "85vw",
         marginTop: "80px",
         marginBottom: "80px",
       }}
     >
       <div className={classes.images}>
-        <img
-          src="https://pixlr.com/images/pixlr-e-photo-editor.jpg"
-          alt="Product"
-        />
+        <img src={item.image} alt="Product" width="50%" />
       </div>
       <div className={classes["slideshow-buttons"]}>
         <div className={classes.one} />
