@@ -28,8 +28,7 @@ function LogoutButton() {
       edge="end"
       color="inherit"
       aria-label="logout"
-      onClick={handleLogout}
-    >
+      onClick={handleLogout}>
       <ExitToAppIcon />
     </IconButton>
   );
@@ -41,8 +40,7 @@ function Copyright(props) {
       variant="body2"
       color="text.secondary"
       align="center"
-      {...props}
-    >
+      {...props}>
       {"Copyright © "}
       <Link to="/">iFurnish</Link> 2024.
     </Typography>
@@ -91,16 +89,14 @@ export default function Dashboard() {
         <Toolbar
           sx={{
             pr: "24px",
-          }}
-        >
+          }}>
           <Typography
             component="h1"
             variant="h6"
             color="inherit"
             noWrap
-            sx={{ flexGrow: 1 }}
-          >
-            Dashboard
+            sx={{ flexGrow: 1 }}>
+            IFurnish - Admin
           </Typography>
           <LogoutButton />
         </Toolbar>
@@ -115,8 +111,7 @@ export default function Dashboard() {
                 display: "flex",
                 flexDirection: "column",
                 height: 240,
-              }}
-            >
+              }}>
               <Chart />
             </Paper>
           </Grid>
@@ -128,8 +123,7 @@ export default function Dashboard() {
                 display: "flex",
                 flexDirection: "column",
                 height: 240,
-              }}
-            >
+              }}>
               <Deposits />
             </Paper>
           </Grid>

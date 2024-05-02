@@ -10,7 +10,6 @@ import styles from "../styles/filter.module.css";
 const Shop = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
-  console.log(products);
   const [isShown, setIsShown] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState(new Set());
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -69,8 +68,7 @@ const Shop = () => {
             className={`${styles.formSelect} ${styles.formSelectLg} ${styles.mb3}`}
             aria-label="Large select example"
             onChange={(e) => setPriceFilter(e.target.value)}
-            style={{ cursor: "pointer" }}
-          >
+            style={{ cursor: "pointer" }}>
             <option value="all" selected>
               Filter by price
             </option>
@@ -81,8 +79,7 @@ const Shop = () => {
 
           <div
             className="brand_container layout_padding1 "
-            style={{ width: "75vw" }}
-          >
+            style={{ width: "75vw" }}>
             {isShown
               ? products
                   ?.filter((product) =>
