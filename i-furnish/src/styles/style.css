@@ -1,3 +1,6 @@
+* {
+  font-family: "Poppins" !important;
+}
 body {
   font-family: "Poppins" !important;
   color: #0c0c0c;
@@ -54,7 +57,7 @@ body {
   transform: translate(100%, -50%);
 }
 
-/header section/ .hero_area {
+header section/ .hero_area {
   height: 100vh;
   background-image: "../images/hero-bg.jpg";
   background-size: cover;
@@ -219,7 +222,6 @@ a:focus {
   text-transform: uppercase;
 }
 
-/end header section/
 /* slider section */
 .slider_section {
   height: calc(90% - 70px);

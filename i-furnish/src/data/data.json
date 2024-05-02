@@ -3,7 +3,6 @@
     {
       "email": "rana@gmail.com",
       "password": "rana123",
-      "name": "Rana essam",
       "phone": "01033763606",
       "age": 23,
       "id": "1184",
@@ -17,73 +16,61 @@
           "image": "rug.jpg"
         }
       ],
-      "wishlist": []
+      "wishlist": [],
+      "firstName": "Rana",
+      "lastName": "essam"
     },
     {
       "email": "shimaa@gmail.com",
       "password": "shimaa123",
-      "name": "shimaa atef",
       "phone": "01033763603",
       "age": 25,
       "id": "0b4b",
       "cart": [],
-      "wishlist": []
+      "wishlist": [],
+      "firstName": "shimaa",
+      "lastName": "atef"
     },
     {
       "id": "ceee",
       "email": "Ranaessam371@gmail.com",
       "password": "123",
-      "name": "rana essam essam",
       "phone": "01033763606",
       "cart": [],
-      "wishlist": []
-    },
-    {
-      "id": "8648",
-      "email": "furnish@gmail.com",
-      "password": "123",
-      "name": "f",
-      "phone": "000000",
-      "cart": [],
-      "wishlist": []
+      "wishlist": [],
+      "firstName": "rana",
+      "lastName": "essam"
     },
     {
       "id": "3c1d",
       "email": "shimaaa123@gmail.com",
       "password": "shimaa123",
-      "name": "Shimaa",
       "phone": "123",
       "cart": [],
-      "wishlist": []
+      "wishlist": [],
+      "firstName": "Shimaa",
+      "lastName": ""
     },
     {
       "id": "5c39",
       "email": "Rana101@gmail.com",
       "password": "rana123",
-      "name": "Rana essam",
       "phone": "01033",
       "cart": [],
-      "wishlist": []
-    },
-    {
-      "id": "e08f",
-      "email": "Ranaessam376@gmail.com",
-      "password": "Rana123",
-      "firstName": "Ranuna",
-      "lastName": "Assoma",
-      "cart": [],
-      "wishlist": []
+      "wishlist": [],
+      "firstName": "Rana",
+      "lastName": "essam"
     },
     {
       "id": "573d",
       "email": "Ranaessam@gmail.com",
       "password": "Rana123",
       "confirmPassword": "Rana123",
-      "firstName": "Rana",
-      "lastName": "Essam",
       "agreedToTerms": "on",
       "cart": [],
-      "wishlist": []
+      "wishlist": [],
+      "firstName": "Rana",
+      "lastName": "Essam"
     },
     {
       "id": "7aa6",
@@ -134,14 +121,6 @@
       "category": "couch",
       "price": 499.99,
       "image": "https://i.pinimg.com/originals/3e/06/3d/3e063dbea335dd01a2b9f08e8483e221.png"
-    },
-    {
-      "id": "3",
-      "name": "Cozy Bed",
-      "description": "Get a good night's sleep on this cozy bed. Its sturdy wooden frame and plush mattress provide the perfect combination of comfort and support.",
-      "category": "bed",
-      "price": 299.99,
-      "image": "https://static.vecteezy.com/system/resources/previews/026/844/938/original/minimalistic-modern-cozy-white-bed-with-pillow-and-blanket-clipart-on-transparent-background-isolated-white-mattress-cozy-white-cot-furniture-with-bed-sheets-free-png.png"
     },
     {
       "id": "4",
@@ -288,7 +267,8 @@
           "quantity": 1
         }
       ],
-      "date": "02/05/2024"
+      "date": "02/05/2024",
+      "name": "Mazen Ayman"
     },
     {
       "id": "9e0d",
@@ -305,7 +285,8 @@
           "quantity": 1
         }
       ],
-      "date": "02/05/2024"
+      "date": "02/05/2024",
+      "name": "Shimaa Atef"
     },
     {
       "id": "768c",
@@ -322,58 +303,8 @@
           "quantity": 1
         }
       ],
-      "date": "02/05/2024"
-    },
-    {
-      "id": "68b7",
-      "clientID": "5559",
-      "price": 299.99,
-      "products": [
-        {
-          "id": "3",
-          "name": "Cozy Bed",
-          "description": "Get a good night's sleep on this cozy bed. Its sturdy wooden frame and plush mattress provide the perfect combination of comfort and support.",
-          "category": "bed",
-          "price": 299.99,
-          "image": "https://static.vecteezy.com/system/resources/previews/026/844/938/original/minimalistic-modern-cozy-white-bed-with-pillow-and-blanket-clipart-on-transparent-background-isolated-white-mattress-cozy-white-cot-furniture-with-bed-sheets-free-png.png",
-          "quantity": 1
-        }
-      ],
-      "date": "02/05/2024"
-    },
-    {
-      "id": "82b0",
-      "clientID": "5559",
-      "price": 149.99,
-      "products": [
-        {
-          "id": "17",
-          "name": "Rocking Chair",
-          "description": "Relax and unwind in this classic rocking chair. Its smooth rocking motion and ergonomic design make it the perfect spot to read a book or enjoy a cup of tea.",
-          "category": "chair",
-          "price": 149.99,
-          "image": "https://www.pngkey.com/png/full/460-4601220_milligan-rocking-chair-rocking-chair-png-transparent.png",
-          "quantity": 1
-        }
-      ],
-      "date": "02/05/2024"
-    },
-    {
-      "id": "a828",
-      "clientID": "5559",
-      "price": 149.99,
-      "products": [
-        {
-          "id": "17",
-          "name": "Rocking Chair",
-          "description": "Relax and unwind in this classic rocking chair. Its smooth rocking motion and ergonomic design make it the perfect spot to read a book or enjoy a cup of tea.",
-          "category": "chair",
-          "price": 149.99,
-          "image": "https://www.pngkey.com/png/full/460-4601220_milligan-rocking-chair-rocking-chair-png-transparent.png",
-          "quantity": 1
-        }
-      ],
-      "date": "02/05/2024"
+      "date": "02/05/2024",
+      "name": "Mahmoud Hamdy"
     }
   ]
 }
