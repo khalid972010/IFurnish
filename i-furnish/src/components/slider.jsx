@@ -8,14 +8,15 @@ const Slider = () => {
   return (
     <div
       style={{
-        height: "100vh",
+        height: "95vh",
         zIndex: -2,
         backgroundImage: `url(${require("../images/hero-bg.jpg")})`,
         backgroundSize: "cover",
         position: "relative",
         backgroundRepeat: "no-repeat",
         overflow: "hidden",
-      }}>
+      }}
+    >
       <header className="header_section" style={{ height: 75 }}>
         <div className="container-fluid"></div>
       </header>
@@ -31,20 +32,29 @@ const Slider = () => {
           <div
             id="carouselExampleIndicators"
             className="carousel slide"
-            data-ride="carousel">
+            data-ride="carousel"
+          >
             <ol className="carousel-indicators">
               <li
                 data-target="#carouselExampleIndicators"
                 data-slide-to="0"
-                className="active"></li>
+                className="active"
+              ></li>
               <li
                 data-target="#carouselExampleIndicators"
-                data-slide-to="1"></li>
+                data-slide-to="1"
+              ></li>
               <li
                 data-target="#carouselExampleIndicators"
-                data-slide-to="2"></li>
+                data-slide-to="2"
+              ></li>
             </ol>
-            <div className="carousel-inner">
+            <div
+              className="carousel-inner"
+              style={{
+                marginTop: "-150px",
+              }}
+            >
               <div className="carousel-item active" style={{ height: 380 }}>
                 <div className="row">
                   <div className="col-md-6">
@@ -105,7 +115,8 @@ const Slider = () => {
                   </div>
                   <div
                     className="col-md-6 img-container"
-                    style={{ marginTop: "55px" }}>
+                    style={{ marginTop: "55px" }}
+                  >
                     <div className="img-box">
                       <img
                         src="https://th.bing.com/th/id/R.ad531cf1d5093b3b8c2eccb8df99e694?rik=%2bbWJIDjBB%2bF1Xg&pid=ImgRaw&r=0"
@@ -143,7 +154,8 @@ const Slider = () => {
                   {/* <div className="col-md-6 img-container"> */}
                   <div
                     className="col-md-6 img-container"
-                    style={{ marginTop: "55px", width: "500px" }}>
+                    style={{ marginTop: "55px", width: "500px" }}
+                  >
                     <div class="img-box">
                       <img
                         src="https://th.bing.com/th/id/R.4f8e3e49ac72d3a01a59e72797b8ab5e?rik=oAql4yvYvOy97g&riu=http%3a%2f%2fwww.stickpng.com%2fassets%2fimages%2f58e90049eb97430e819064d4.png&ehk=2l70yxF%2fYoXGzJbbYAoXq8j6LR3OAKsDeIZTJ3Wghlg%3d&risl=&pid=ImgRaw&r=0"

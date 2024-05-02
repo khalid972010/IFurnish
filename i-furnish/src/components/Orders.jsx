@@ -1,19 +1,13 @@
 import * as React from "react";
-import Link from "@mui/material/Link";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Title from "./Title";
 import { Typography, IconButton, Modal, Box, Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete"; // Import DeleteIcon
 import { useDispatch, useSelector } from "react-redux";
 import { getAllOrders, deleteOrder } from "../redux/store/slices/order-slice";
-
-function preventDefault(event) {
-  event.preventDefault();
-}
 
 export default function Orders() {
   const dispatch = useDispatch();
@@ -81,7 +75,8 @@ export default function Orders() {
               <TableCell style={{ padding: "10px", width: "40px" }}>
                 <IconButton
                   onClick={() => handleDeleteOrder(o.id)}
-                  aria-label="delete">
+                  aria-label="delete"
+                >
                   <DeleteIcon style={{ color: "black" }} />
                 </IconButton>
               </TableCell>
@@ -100,7 +95,8 @@ export default function Orders() {
             height: 40,
             padding: 10,
             fontSize: 14,
-          }}>
+          }}
+        >
           See more orders
         </button>
       )}
@@ -109,7 +105,8 @@ export default function Orders() {
         open={open}
         onClose={handleCancelDelete}
         aria-labelledby="modal-title"
-        aria-describedby="modal-description">
+        aria-describedby="modal-description"
+      >
         <Box
           sx={{
             position: "absolute",
@@ -120,7 +117,8 @@ export default function Orders() {
             bgcolor: "background.paper",
             boxShadow: 24,
             p: 4,
-          }}>
+          }}
+        >
           <Typography id="modal-title" variant="h6" component="h2">
             Confirm Delete
           </Typography>
@@ -132,13 +130,15 @@ export default function Orders() {
               variant="contained"
               onClick={handleCancelDelete}
               color="primary"
-              sx={{ mr: 2 }}>
+              sx={{ mr: 2 }}
+            >
               Cancel
             </Button>
             <Button
               onClick={handleDeleteConfirmed}
               variant="contained"
-              color="error">
+              color="error"
+            >
               Delete
             </Button>
           </Box>

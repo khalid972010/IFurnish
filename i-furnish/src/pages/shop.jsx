@@ -68,7 +68,8 @@ const Shop = () => {
             className={`${styles.formSelect} ${styles.formSelectLg} ${styles.mb3}`}
             aria-label="Large select example"
             onChange={(e) => setPriceFilter(e.target.value)}
-            style={{ cursor: "pointer" }}>
+            style={{ cursor: "pointer" }}
+          >
             <option value="all" selected>
               Filter by price
             </option>
@@ -79,7 +80,8 @@ const Shop = () => {
 
           <div
             className="brand_container layout_padding1 "
-            style={{ width: "75vw" }}>
+            style={{ width: "75vw" }}
+          >
             {isShown
               ? products
                   ?.filter((product) =>

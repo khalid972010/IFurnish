@@ -1,20 +1,14 @@
 import * as React from "react";
-import Link from "@mui/material/Link";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Title from "./Title";
 import { Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers, deleteUser } from "../redux/store/slices/user-slice";
 import { IconButton, Modal, Box, Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-
-function preventDefault(event) {
-  event.preventDefault();
-}
 
 export default function Customers() {
   const dispatch = useDispatch();
@@ -77,7 +71,8 @@ export default function Customers() {
               <TableCell style={{ width: 20 }}>
                 <IconButton
                   onClick={() => handleDeleteUser(row.id)}
-                  aria-label="delete">
+                  aria-label="delete"
+                >
                   <DeleteIcon style={{ color: "black" }} />
                 </IconButton>
               </TableCell>
@@ -94,7 +89,8 @@ export default function Customers() {
             height: 40,
             padding: 10,
             fontSize: 14,
-          }}>
+          }}
+        >
           See more customers
         </button>
       )}
@@ -102,7 +98,8 @@ export default function Customers() {
         open={open}
         onClose={handleCancelDelete}
         aria-labelledby="modal-title"
-        aria-describedby="modal-description">
+        aria-describedby="modal-description"
+      >
         <Box
           sx={{
             position: "absolute",
@@ -113,7 +110,8 @@ export default function Customers() {
             bgcolor: "background.paper",
             boxShadow: 24,
             p: 4,
-          }}>
+          }}
+        >
           <Typography variant="h6" id="modal-title">
             Confirm Delete
           </Typography>
@@ -125,13 +123,15 @@ export default function Customers() {
               variant="contained"
               onClick={handleCancelDelete}
               color="primary"
-              sx={{ mr: 2 }}>
+              sx={{ mr: 2 }}
+            >
               Cancel
             </Button>
             <Button
               onClick={handleDeleteConfirmed}
               color="error"
-              variant="contained">
+              variant="contained"
+            >
               Delete
             </Button>
           </Box>

@@ -20,6 +20,8 @@ const Navbars = ({ onHideFooter }) => {
     }
   };
 
+  console.log(firstChar);
+
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -28,8 +30,7 @@ const Navbars = ({ onHideFooter }) => {
           to="/"
           style={{ color: "#24d278", fontSize: "22px", fontWeight: "bold" }}
         >
-          IFurnish style=
-          {{ color: "#24d278", fontSize: "22px", fontWeight: "bold" }} iFurnish
+          IFurnish
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -75,7 +76,7 @@ const Navbars = ({ onHideFooter }) => {
             </Nav.Link>
           </Nav>
           <Nav>
-            {firstChar && (
+            {!firstChar && (
               <Nav.Link
                 as={Link}
                 to="/signup"
@@ -84,7 +85,7 @@ const Navbars = ({ onHideFooter }) => {
                 Signup
               </Nav.Link>
             )}
-            {firstChar && (
+            {!firstChar && (
               <Nav.Link
                 as={Link}
                 to="/login"
@@ -93,14 +94,16 @@ const Navbars = ({ onHideFooter }) => {
                 Login
               </Nav.Link>
             )}
-            <Nav.Link
-              as={Link}
-              to="/cart"
-              onClick={() => handleNavbarClick("/cart")}
-            >
-              <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
-              {cartLength}
-            </Nav.Link>
+            {firstChar && (
+              <Nav.Link
+                as={Link}
+                to="/cart"
+                onClick={() => handleNavbarClick("/cart")}
+              >
+                <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
+                {cartLength}
+              </Nav.Link>
+            )}
             {firstChar && <AccountMenu></AccountMenu>}
           </Nav>
         </Navbar.Collapse>

@@ -1,12 +1,7 @@
 import * as React from "react";
-import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import Title from "./Title";
 import { useSelector } from "react-redux";
-
-function preventDefault(event) {
-  event.preventDefault();
-}
 
 const formatDate = (date) => {
   const day = date.getDate();
@@ -35,12 +30,14 @@ export default function Deposits() {
       <Typography
         component="p"
         variant="h4"
-        sx={{ color: "#24d278", fontWeight: "bold" }}>
+        sx={{ color: "#24d278", fontWeight: "bold" }}
+      >
         ${totalRevenue}
       </Typography>
       <Typography
         color="text.secondary"
-        sx={{ flex: 1, fontSize: "14px", marginTop: "8px" }}>
+        sx={{ flex: 1, fontSize: "14px", marginTop: "8px" }}
+      >
         Date: {formatDate(new Date())}
       </Typography>
     </React.Fragment>
