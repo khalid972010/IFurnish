@@ -80,9 +80,19 @@ const wishListSlice = createSlice({
         return state;
       }
     },
+    removeItemFromFav(state, action) {
+      const item = action.payload;
+      const id = item.id;
+      const newState = {
+        ...state,
+        wishlistItems: state.wishlistItems.filter((item) => item.id !== id),
+      };
+      saveState(newState);
+      return newState;
+    },
   },
 });
 
-export const { addItemToFavorites } = wishListSlice.actions;
+export const { addItemToFavorites, removeItemFromFav } = wishListSlice.actions;
 
 export default wishListSlice.reducer;
