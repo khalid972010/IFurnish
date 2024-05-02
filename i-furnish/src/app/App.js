@@ -44,7 +44,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/item/:id" element={<Item />} />
           </Routes>
-          {hideFooter && <Footer></Footer>}
+          {!hideFooter && <Footer></Footer>}
         </BrowserRouter>
       </Provider>
     </Suspense>

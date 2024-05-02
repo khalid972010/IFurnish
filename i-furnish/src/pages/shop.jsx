@@ -5,13 +5,16 @@ import ShopCard from "../components/shopCard";
 import Category from "../components/category";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPrds } from "../redux/store/slices/product-slice";
+import styles from "../styles/filter.module.css";
 
 const Shop = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
+  console.log(products);
   const [isShown, setIsShown] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState(new Set());
-
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [priceFilter, setPriceFilter] = useState("all");
   useEffect(() => {
     dispatch(getAllPrds());
   }, [dispatch]);
@@ -31,6 +34,23 @@ const Shop = () => {
       return newCategories;
     });
   }
+  const handleFilter = () => {
+    let filtered = products.filter((product) => {
+      if (priceFilter === "all") {
+        return true;
+      } else if (priceFilter === "1") {
+        return product.price >= 50 && product.price <= 100;
+      } else if (priceFilter === "2") {
+        return product.price >= 101 && product.price <= 150;
+      } else if (priceFilter === "3") {
+        return product.price >= 151 && product.price <= 200;
+      }
+    });
+    setFilteredProducts(filtered);
+  };
+  useEffect(() => {
+    handleFilter();
+  }, [priceFilter, products]);
 
   return (
     <>
@@ -45,13 +65,23 @@ const Shop = () => {
             <Category type="bed" onClick={() => handleOnClick("bed")} />
             <Category type="rug" onClick={() => handleOnClick("rug")} />
           </div>
-          <div className="heading_container">
-            <h2>Featured Brands</h2>
-          </div>
+          <select
+            className={`${styles.formSelect} ${styles.formSelectLg} ${styles.mb3}`}
+            aria-label="Large select example"
+            onChange={(e) => setPriceFilter(e.target.value)}
+          >
+            <option value="all" selected>
+              Filter by price
+            </option>
+            <option value="1">50$ - 100$</option>
+            <option value="2">100$ - 150$</option>
+            <option value="3">150++</option>
+          </select>
 
           <div
             className="brand_container layout_padding1 "
-            style={{ width: "75vw" }}>
+            style={{ width: "75vw" }}
+          >
             {isShown
               ? products
                   ?.filter((product) =>
@@ -59,13 +89,19 @@ const Shop = () => {
                       ? true
                       : selectedCategories.has(product.category)
                   )
+                  .filter((product) => {
+                    if (priceFilter === "1") {
+                      return product.price >= 25 && product.price <= 100;
+                    } else if (priceFilter === "2") {
+                      return product.price > 100 && product.price <= 150;
+                    } else if (priceFilter === "3") {
+                      return product.price > 150 && product.price <= 20000;
+                    } else {
+                      return true; // Return all products if no price filter is applied
+                    }
+                  })
                   .map((e) => <ShopCard key={e.id} {...e} />)
-              : products
-                  ?.filter((product) =>
-                    selectedCategories.size === 0
-                      ? true
-                      : selectedCategories.has(product.category)
-                  )
+              : filteredProducts
                   .slice(0, 4)
                   .map((e) => <ShopCard key={e.id} {...e} />)}
           </div>
