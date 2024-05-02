@@ -10,7 +10,7 @@ import { addItemToFavorites } from "../redux/store/slices/wish-list-slice";
 
 const Item = () => {
   const [item, setItem] = useState(null);
-  const [isFavorite, setIsFavorite] = useState(false); // State to track if the item is in favorites
+  const [isFavorite, setIsFavorite] = useState(false);
   const params = useParams();
   const dispatch = useDispatch();
 
@@ -75,7 +75,7 @@ const Item = () => {
               style={{
                 marginRight: "10px",
                 width: "80%",
-                backgroundColor: "#24d278", // Green color
+                backgroundColor: "#24d278",
               }}
             >
               Add to Cart
@@ -86,12 +86,12 @@ const Item = () => {
             className={`${classes.like} ${classes.btnItem}`}
             style={{
               width: "15%",
-              backgroundColor: "transparent",
+              backgroundColor: "#24d278",
             }}
           >
             <FontAwesomeIcon
               icon={faHeart}
-              style={{ color: isFavorite ? "red" : "#24d278", height: "19px" }}
+              style={{ color: isFavorite ? "red" : "white", height: "19px" }}
             />
           </button>
         </div>

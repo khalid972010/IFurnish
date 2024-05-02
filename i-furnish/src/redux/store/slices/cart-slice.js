@@ -38,37 +38,35 @@ const cartSlice = createSlice({
     addItemToCart(state, action) {
       const newItem = action.payload;
       if (typeof newItem === "object" && newItem !== null) {
-        if (!state.cartItems) {
-          const newState = {
-            ...state,
-            cartItems: [{ ...newItem, quantity: 1 }],
-          };
-          alert("Item is added successfully");
-
-          saveState(newState);
-          return newState;
-        }
-        const existingItem = state.cartItems.find(
-          (item) => item.id === newItem.id
-        );
-        if (existingItem) {
-          alert("Item is already added");
+        let newState = { ...state };
+        if (!newState.cartItems) {
+          newState.cartItems = [{ ...newItem, quantity: 1 }];
         } else {
-          // If item does not exist, add it
-          const newState = {
-            ...state,
-            cartItems: [...state.cartItems, { ...newItem, quantity: 1 }],
-          };
-          alert("Item is added successfully");
-          saveState(newState);
-          return newState;
+          const existingItemIndex = newState.cartItems.findIndex(
+            (item) => item.id === newItem.id
+          );
+          if (existingItemIndex !== -1) {
+            // If item exists, update quantity
+            newState.cartItems = [...newState.cartItems];
+            newState.cartItems[existingItemIndex] = {
+              ...newState.cartItems[existingItemIndex],
+              quantity: newState.cartItems[existingItemIndex].quantity + 1,
+            };
+          } else {
+            // If item does not exist, add it
+            newState.cartItems = [
+              ...newState.cartItems,
+              { ...newItem, quantity: 1 },
+            ];
+          }
         }
+        saveState(newState);
+        return newState;
       } else {
         console.error("Invalid item added to cart:", newItem);
         return state;
       }
     },
-
     removeItemFromCart(state, action) {
       const id = action.payload;
       const newState = {

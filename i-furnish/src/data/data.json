@@ -108,12 +108,12 @@
       "cart": [],
       "wishlist": [
         {
-          "id": "1",
-          "name": "Comfy Armchair",
-          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
-          "category": "chair",
-          "price": 199.99,
-          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png"
+          "id": "3",
+          "name": "Cozy Bed",
+          "description": "Get a good night's sleep on this cozy bed. Its sturdy wooden frame and plush mattress provide the perfect combination of comfort and support.",
+          "category": "bed",
+          "price": 299.99,
+          "image": "https://static.vecteezy.com/system/resources/previews/026/844/938/original/minimalistic-modern-cozy-white-bed-with-pillow-and-blanket-clipart-on-transparent-background-isolated-white-mattress-cozy-white-cot-furniture-with-bed-sheets-free-png.png"
         }
       ]
     }
