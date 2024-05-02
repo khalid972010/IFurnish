@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { Fragment, useState } from "react";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Menu from "@mui/material/Menu";
@@ -7,15 +7,18 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-
 import Logout from "@mui/icons-material/Logout";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { updateFirstChar } from "../redux/store/slices/profile-slice";
 
 export default function AccountMenu() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const firstChar = "M";
+  const firstChar = useSelector((state) => state.profile.firstChar);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -23,12 +26,18 @@ export default function AccountMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleLogout = () => {
+    setAnchorEl(null);
+    dispatch(updateFirstChar(null));
+    navigate("/login");
+  };
   const handleProfileClick = () => {
     setAnchorEl(null);
     navigate("/profile");
   };
   return (
-    <React.Fragment>
+    <Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <Tooltip title="Account settings">
           <IconButton
@@ -40,7 +49,7 @@ export default function AccountMenu() {
             aria-expanded={open ? "true" : undefined}
           >
             <Avatar sx={{ width: 32, height: 32, backgroundColor: "#24d278" }}>
-              {firstChar}
+              {firstChar || ""}
             </Avatar>
           </IconButton>
         </Tooltip>
@@ -85,13 +94,13 @@ export default function AccountMenu() {
         </MenuItem>
         <Divider />
 
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
           Logout
         </MenuItem>
       </Menu>
-    </React.Fragment>
+    </Fragment>
   );
 }

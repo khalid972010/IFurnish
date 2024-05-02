@@ -13,12 +13,17 @@ import Typography from "@mui/material/Typography";
 import LoginIcon from "@mui/icons-material/Login";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { updateFirstChar } from "../redux/store/slices/profile-slice";
 
 function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
   const [success, setSuccess] = React.useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -46,11 +51,12 @@ function Login() {
         return;
       }
       localStorage.setItem("userID", userWithEmail.id);
-
       setError("");
       setSuccess(true);
+      dispatch(updateFirstChar(userWithEmail.firstName[0]));
+
       setTimeout(() => {
-        window.location.href = "/";
+        navigate("/");
       }, 1000);
     } catch (error) {
       console.error("Error fetching user data:", error);

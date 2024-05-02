@@ -23,13 +23,19 @@ export const UpdateProfile = createAsyncThunk(
     return response.data;
   }
 );
+
 const profileSlice = createSlice({
   name: "profile",
   initialState: {
     profile: [],
+    firstChar: "",
     status: "idle",
   },
-  reducers: {},
+  reducers: {
+    updateFirstChar: (state, action) => {
+      state.firstChar = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getProfile.pending, (state) => {
       state.status = "loading";
@@ -55,5 +61,6 @@ const profileSlice = createSlice({
     });
   },
 });
+export const { updateFirstChar } = profileSlice.actions;
 
 export default profileSlice.reducer;

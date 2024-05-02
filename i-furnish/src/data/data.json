@@ -97,7 +97,7 @@
       "wishlist": []
     },
     {
-      "id": "5559",
+      "id": "9bb4",
       "email": "mazenaymanmo22@gmail.com",
       "password": "Mazen123",
       "confirmPassword": "Mazen123",
@@ -116,6 +116,15 @@
           "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png"
         }
       ]
+    },
+    {
+      "id": "5456",
+      "email": "mahmouddhamdy7@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "firstName": "Hamdy",
+      "lastName": "Mahmoud",
+      "agreedToTerms": "on"
     }
   ],
   "products": [
