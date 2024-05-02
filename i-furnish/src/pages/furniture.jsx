@@ -89,18 +89,38 @@ const Furniture = () => {
                   <div className="img_container ">
                     <div className="box b-1">
                       <div className="img-box">
-                        <img src="images/t-1.jpg" alt />
+                        <img
+                          src="images/t-1.jpg"
+                          height="200px"
+                          width="200px"
+                          alt=""
+                        />
                       </div>
                       <div className="img-box">
-                        <img src="images/t-2.jpg" alt />
+                        <img
+                          src="images/t-2.jpg"
+                          height="200px"
+                          width="200px"
+                          alt=""
+                        />
                       </div>
                     </div>
                     <div className="box b-2">
                       <div className="img-box">
-                        <img src="images/t-3.jpg" alt />
+                        <img
+                          src="images/t-3.jpg"
+                          height="200px"
+                          width="200px"
+                          alt=""
+                        />
                       </div>
                       <div className="img-box">
-                        <img src="images/t-4.jpg" alt />
+                        <img
+                          src="images/t-4.jpg"
+                          height="200px"
+                          width="200px"
+                          alt=""
+                        />
                       </div>
                     </div>
                   </div>
@@ -114,18 +134,42 @@ const Furniture = () => {
                   <div className="img_container ">
                     <div className="box b-1">
                       <div className="img-box">
-                        <img src="images/t-3.jpg" alt />
+                        <img
+                          src="images/c-1.jpeg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                       <div className="img-box">
-                        <img src="images/t-4.jpg" alt />
+                        <img
+                          src="images/c-2.jpg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                     </div>
                     <div className="box b-2">
                       <div className="img-box">
-                        <img src="images/t-1.jpg" alt />
+                        <img
+                          src="images/c-3.jpeg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                       <div className="img-box">
-                        <img src="images/t-2.jpg" alt />
+                        <img
+                          src="images/c-4.jpg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                     </div>
                   </div>
@@ -139,18 +183,42 @@ const Furniture = () => {
                   <div className="img_container ">
                     <div className="box b-1">
                       <div className="img-box">
-                        <img src="images/t-4.jpg" alt />
+                        <img
+                          src="images/b-1.jpg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                       <div className="img-box">
-                        <img src="images/t-1.jpg" alt />
+                        <img
+                          src="images/b-3.webp"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                     </div>
                     <div className="box b-2">
                       <div className="img-box">
-                        <img src="images/t-3.jpg" alt />
+                        <img
+                          src="images/b-4.jpg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                       <div className="img-box">
-                        <img src="images/t-2.jpg" alt />
+                        <img
+                          src="images/b-5.jpg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                     </div>
                   </div>
@@ -164,18 +232,42 @@ const Furniture = () => {
                   <div className="img_container ">
                     <div className="box b-1">
                       <div className="img-box">
-                        <img src="images/t-1.jpg" alt />
+                        <img
+                          src="images/r-1.jpg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                       <div className="img-box">
-                        <img src="images/t-4.jpg" alt />
+                        <img
+                          src="images/r-4.jpeg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                     </div>
                     <div className="box b-2">
                       <div className="img-box">
-                        <img src="images/t-3.jpg" alt />
+                        <img
+                          src="images/r-3.jpg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                       <div className="img-box">
-                        <img src="images/t-2.jpg" alt />
+                        <img
+                          src="images/r-2.jpg"
+                          height="200px"
+                          width="200px"
+                          style={{ objectFit: "cover" }}
+                          alt=""
+                        />
                       </div>
                     </div>
                   </div>
