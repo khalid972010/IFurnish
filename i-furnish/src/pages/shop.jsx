@@ -99,7 +99,23 @@ const Shop = () => {
                     }
                   })
                   .map((e) => <ShopCard key={e.id} {...e} />)
-              : filteredProducts
+              : products
+                  ?.filter((product) =>
+                    selectedCategories.size === 0
+                      ? true
+                      : selectedCategories.has(product.category)
+                  )
+                  .filter((product) => {
+                    if (priceFilter === "1") {
+                      return product.price >= 25 && product.price <= 100;
+                    } else if (priceFilter === "2") {
+                      return product.price > 100 && product.price <= 150;
+                    } else if (priceFilter === "3") {
+                      return product.price > 150 && product.price <= 20000;
+                    } else {
+                      return true;
+                    }
+                  })
                   .slice(0, 4)
                   .map((e) => <ShopCard key={e.id} {...e} />)}
           </div>
