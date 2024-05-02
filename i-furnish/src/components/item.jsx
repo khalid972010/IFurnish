@@ -4,7 +4,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import classes from "../styles/itemStyle.module.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addItemToCart } from "../redux/store/slices/cart-slice";
 import { addItemToFavorites } from "../redux/store/slices/wish-list-slice";
 
@@ -49,8 +49,7 @@ const Item = () => {
         width: "85vw",
         marginTop: "80px",
         marginBottom: "80px",
-      }}
-    >
+      }}>
       <div className={classes.images}>
         <img src={item.image} alt="Product" width="50%" />
       </div>
@@ -76,8 +75,7 @@ const Item = () => {
                 marginRight: "10px",
                 width: "80%",
                 backgroundColor: "#24d278",
-              }}
-            >
+              }}>
               Add to Cart
             </button>
           )}
@@ -87,8 +85,7 @@ const Item = () => {
             style={{
               width: "15%",
               backgroundColor: "#24d278",
-            }}
-          >
+            }}>
             <FontAwesomeIcon
               icon={faHeart}
               style={{ color: isFavorite ? "red" : "white", height: "19px" }}
