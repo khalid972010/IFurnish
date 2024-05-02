@@ -45,9 +45,6 @@ const wishListSlice = createSlice({
             ...state,
             wishlistItems: [{ ...newItem }],
           };
-          console.log("11111");
-          alert("Added successfully To Favorites");
-
           saveState(newState);
           return newState;
         }
@@ -62,8 +59,6 @@ const wishListSlice = createSlice({
             ],
           };
           saveState(newState);
-          alert("Removed successfully from favorites!");
-
           return newState;
         } else {
           // If item does not exist, add it
@@ -71,7 +66,6 @@ const wishListSlice = createSlice({
             ...state,
             wishlistItems: [...state.wishlistItems, { ...newItem }],
           };
-          alert("Added successfully to favorites");
           saveState(newState);
           return newState;
         }

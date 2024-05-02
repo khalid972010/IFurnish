@@ -14,6 +14,15 @@ export const getPrdsByCategories = createAsyncThunk(
   }
 );
 
+export const deleteProduct = createAsyncThunk(
+  "products/deleteProduct",
+  async (productID) => {
+    const response = await axios.delete(
+      `http://localhost:3001/products/${productID}`
+    );
+    return response.data;
+  }
+);
 const productSlice = createSlice({
   name: "products",
   initialState: {

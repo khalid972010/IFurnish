@@ -13,7 +13,6 @@ import {
   removeItemFromCart,
 } from "../redux/store/slices/cart-slice";
 import { addItemToFavorites } from "../redux/store/slices/wish-list-slice";
-import Item from "./item";
 
 const SingleItemCart = (props) => {
   const dispatch = useDispatch();
@@ -110,7 +109,7 @@ const SingleItemCart = (props) => {
               ref={quantityRef}
               id="quantity1"
               min={1}
-              defaultValue={1}
+              defaultValue={quantity}
               type="number"
               className="form-control mx-3 w-75"
               placeholder="Quantity"

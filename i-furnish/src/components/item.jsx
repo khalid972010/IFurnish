@@ -4,13 +4,13 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import classes from "../styles/itemStyle.module.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addItemToCart } from "../redux/store/slices/cart-slice";
 import { addItemToFavorites } from "../redux/store/slices/wish-list-slice";
 
 const Item = () => {
   const [item, setItem] = useState(null);
-  const [isFavorite, setIsFavorite] = useState(false); // State to track if the item is in favorites
+  const [isFavorite, setIsFavorite] = useState(false);
   const params = useParams();
   const dispatch = useDispatch();
 
@@ -49,8 +49,7 @@ const Item = () => {
         width: "85vw",
         marginTop: "80px",
         marginBottom: "80px",
-      }}
-    >
+      }}>
       <div className={classes.images}>
         <img src={item.image} alt="Product" width="50%" />
       </div>
@@ -75,9 +74,8 @@ const Item = () => {
               style={{
                 marginRight: "10px",
                 width: "80%",
-                backgroundColor: "#24d278", // Green color
-              }}
-            >
+                backgroundColor: "#24d278",
+              }}>
               Add to Cart
             </button>
           )}
@@ -86,12 +84,11 @@ const Item = () => {
             className={`${classes.like} ${classes.btnItem}`}
             style={{
               width: "15%",
-              backgroundColor: "transparent",
-            }}
-          >
+              backgroundColor: "#24d278",
+            }}>
             <FontAwesomeIcon
               icon={faHeart}
-              style={{ color: isFavorite ? "red" : "#24d278", height: "19px" }}
+              style={{ color: isFavorite ? "red" : "white", height: "19px" }}
             />
           </button>
         </div>
