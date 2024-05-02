@@ -12,7 +12,9 @@ const Home = () => {
     <div>
       <Slider></Slider>
       <About></About>
+      <hr style={{ marginLeft: 180, marginRight: 180 }} />
       <Shop></Shop>
+      <hr style={{ marginLeft: 180, marginRight: 180 }} />
       <Contact></Contact>
     </div>
   );

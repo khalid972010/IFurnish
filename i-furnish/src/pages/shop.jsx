@@ -69,13 +69,14 @@ const Shop = () => {
             className={`${styles.formSelect} ${styles.formSelectLg} ${styles.mb3}`}
             aria-label="Large select example"
             onChange={(e) => setPriceFilter(e.target.value)}
+            style={{ cursor: "pointer" }}
           >
             <option value="all" selected>
               Filter by price
             </option>
             <option value="1">50$ - 100$</option>
             <option value="2">100$ - 150$</option>
-            <option value="3">150++</option>
+            <option value="3">150$+</option>
           </select>
 
           <div
