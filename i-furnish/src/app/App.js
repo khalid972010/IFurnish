@@ -16,9 +16,9 @@ import Cart from "../pages/cart";
 import Profile from "../pages/profile";
 import { Provider } from "react-redux";
 import store from "../redux/store/store";
-
 import Favorites from "../pages/favorites";
 import Dashboard from "../pages/Dashboard";
+import NotFound from "../pages/notFound";
 function App() {
   const [hideFooter, setHideFooter] = useState(false);
 
@@ -45,7 +45,9 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/item/:id" element={<Item />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
+
           {!hideFooter && <Footer></Footer>}
         </BrowserRouter>
       </Provider>
