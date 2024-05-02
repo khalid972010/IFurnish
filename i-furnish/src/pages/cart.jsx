@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SingleItemCart from "../components/singleItemCart";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cartItems);
@@ -16,6 +17,75 @@ const Cart = () => {
       setTotalPrice(price);
     }
   }, [cart]);
+
+  const handleCheckOut = () => {
+   // console.log(typeof totalPrice, totalPrice);
+
+    
+    axios
+      .post("https://accept.paymob.com/api/auth/tokens", {
+        api_key:
+          "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1Rjd09UUTVMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkudzh4WjByODVaTll6WnJueE1nc1pKZnU5OEVFRWdFcGNoa3Y5QjNUZWF4VVlTdFp2ZnhyMDFBeE1MSGh0QWpaOTZpbVJJUTlYNUl4WmZjV09mZVgzV1E=",
+      })
+      .then((res) => {
+       // console.log(res.data.token);
+        const authToken = res.data.token;
+        const amountCents = Math.round(totalPrice * 100);
+
+        axios
+          .post("https://accept.paymob.com/api/ecommerce/orders", {
+            auth_token: authToken,
+            delivery_needed: "false",
+            amount_cents: amountCents,
+            currency: "EGP",
+            items: [],
+          })
+          .then((res) => {
+           // console.log(res.data);
+            const orderId = res.data.id;
+            axios
+              .post("https://accept.paymob.com/api/acceptance/payment_keys",{
+                "auth_token": authToken,
+                "amount_cents": amountCents,
+                "expiration": 3600,
+                "order_id": orderId,
+                "billing_data": {
+                  "apartment": "803",
+                  "email": "claudette09@exa.com",
+                  "floor": "42",
+                  "first_name": "Clifford",
+                  "street": "Ethan Land",
+                  "building": "8028",
+                  "phone_number": "+86(8)9135210487",
+                  "shipping_method": "PKG",
+                  "postal_code": "01898",
+                  "city": "Jaskolskiburgh",
+                  "country": "CR",
+                  "last_name": "Nicolas",
+                  "state": "Utah"
+                },
+                "currency": "EGP",
+                "integration_id": 4556039
+  
+              })
+              .then((res) => {
+                console.log(res.data); 
+                window.location.assign(`https://accept.paymob.com/api/acceptance/iframes/837986?payment_token=${res.data.token}
+
+                `);
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div>
@@ -89,6 +159,7 @@ const Cart = () => {
                     className="btn btn-primary btn-lg btn-block"
                     style={{ backgroundColor: "#24d278", border: "0px" }}
                     disabled={!cart?.length}
+                    onClick={handleCheckOut}
                   >
                     Go to checkout
                   </button>
