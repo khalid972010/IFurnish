@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import SingleItemCart from "../components/singleItemCart";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { clearCart } from "../redux/store/slices/cart-slice";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart.cartItems);
-  const selector = useSelector((state) => state);
-  console.log(selector);
-
+  const dispatch = useDispatch();
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
@@ -20,17 +19,26 @@ const Cart = () => {
     }
   }, [cart]);
 
-  const handleCheckOut = () => {
-   // console.log(typeof totalPrice, totalPrice);
+  const formatDate = (date) => {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
 
-    
+    return `${day < 10 ? "0" + day : day}/${
+      month < 10 ? "0" + month : month
+    }/${year}`;
+  };
+
+  const handleCheckOut = () => {
+    // console.log(typeof totalPrice, totalPrice);
+
     axios
       .post("https://accept.paymob.com/api/auth/tokens", {
         api_key:
           "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1Rjd09UUTVMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkudzh4WjByODVaTll6WnJueE1nc1pKZnU5OEVFRWdFcGNoa3Y5QjNUZWF4VVlTdFp2ZnhyMDFBeE1MSGh0QWpaOTZpbVJJUTlYNUl4WmZjV09mZVgzV1E=",
       })
       .then((res) => {
-       // console.log(res.data.token);
+        // console.log(res.data.token);
         const authToken = res.data.token;
         const amountCents = Math.round(totalPrice * 100);
 
@@ -43,38 +51,45 @@ const Cart = () => {
             items: [],
           })
           .then((res) => {
-           // console.log(res.data);
+            // console.log(res.data);
             const orderId = res.data.id;
             axios
-              .post("https://accept.paymob.com/api/acceptance/payment_keys",{
-                "auth_token": authToken,
-                "amount_cents": amountCents,
-                "expiration": 3600,
-                "order_id": orderId,
-                "billing_data": {
-                  "apartment": "803",
-                  "email": "claudette09@exa.com",
-                  "floor": "42",
-                  "first_name": "Clifford",
-                  "street": "Ethan Land",
-                  "building": "8028",
-                  "phone_number": "+86(8)9135210487",
-                  "shipping_method": "PKG",
-                  "postal_code": "01898",
-                  "city": "Jaskolskiburgh",
-                  "country": "CR",
-                  "last_name": "Nicolas",
-                  "state": "Utah"
+              .post("https://accept.paymob.com/api/acceptance/payment_keys", {
+                auth_token: authToken,
+                amount_cents: amountCents,
+                expiration: 3600,
+                order_id: orderId,
+                billing_data: {
+                  apartment: "803",
+                  email: "claudette09@exa.com",
+                  floor: "42",
+                  first_name: "Clifford",
+                  street: "Ethan Land",
+                  building: "8028",
+                  phone_number: "+86(8)9135210487",
+                  shipping_method: "PKG",
+                  postal_code: "01898",
+                  city: "Jaskolskiburgh",
+                  country: "CR",
+                  last_name: "Nicolas",
+                  state: "Utah",
                 },
-                "currency": "EGP",
-                "integration_id": 4556039
-  
+                currency: "EGP",
+                integration_id: 4556039,
               })
               .then((res) => {
-                console.log(res.data); 
-                window.location.assign(`https://accept.paymob.com/api/acceptance/iframes/837986?payment_token=${res.data.token}
-
-                `);
+                console.log(res.data);
+                window.open(
+                  `https://accept.paymob.com/api/acceptance/iframes/837986?payment_token=${res.data.token}`
+                );
+                const order = {
+                  clientID: localStorage.getItem("userID"),
+                  price: totalPrice,
+                  products: cart,
+                  date: formatDate(new Date()),
+                };
+                axios.post("http://localhost:3001/orders", order).then();
+                dispatch(clearCart());
               })
               .catch((err) => {
                 console.log(err);

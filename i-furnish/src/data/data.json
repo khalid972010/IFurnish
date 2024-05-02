@@ -105,17 +105,7 @@
       "lastName": "Ayman",
       "agreedToTerms": "on",
       "phoneNumber": "01022936472",
-      "cart": [
-        {
-          "id": "1",
-          "name": "Comfy Armchair",
-          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
-          "category": "chair",
-          "price": 199.99,
-          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png",
-          "quantity": 1
-        }
-      ],
+      "cart": [],
       "wishlist": [
         {
           "id": "2",
@@ -280,6 +270,76 @@
       "category": "rug",
       "price": 179.99,
       "image": "https://images.squarespace-cdn.com/content/v1/62b601d2896f5f3b36b66821/1665605978477-YCETA7Z5TGY8EH5J3KVG/ALPI19+10%277_+x+13%27+Pak+Moroccan+-+Edited.png"
+    }
+  ],
+  "orders": [
+    {
+      "id": "71e0",
+      "clientID": "5559",
+      "price": 19999,
+      "products": [
+        {
+          "id": "1",
+          "name": "Comfy Armchair",
+          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
+          "category": "chair",
+          "price": 199.99,
+          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png",
+          "quantity": 1
+        }
+      ],
+      "date": "02/05/2024"
+    },
+    {
+      "id": "9e0d",
+      "clientID": "5559",
+      "price": 199.99,
+      "products": [
+        {
+          "id": "1",
+          "name": "Comfy Armchair",
+          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
+          "category": "chair",
+          "price": 199.99,
+          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png",
+          "quantity": 1
+        }
+      ],
+      "date": "02/05/2024"
+    },
+    {
+      "id": "768c",
+      "clientID": "5559",
+      "price": 199.99,
+      "products": [
+        {
+          "id": "1",
+          "name": "Comfy Armchair",
+          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
+          "category": "chair",
+          "price": 199.99,
+          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png",
+          "quantity": 1
+        }
+      ],
+      "date": "02/05/2024"
+    },
+    {
+      "id": "68b7",
+      "clientID": "5559",
+      "price": 299.99,
+      "products": [
+        {
+          "id": "3",
+          "name": "Cozy Bed",
+          "description": "Get a good night's sleep on this cozy bed. Its sturdy wooden frame and plush mattress provide the perfect combination of comfort and support.",
+          "category": "bed",
+          "price": 299.99,
+          "image": "https://static.vecteezy.com/system/resources/previews/026/844/938/original/minimalistic-modern-cozy-white-bed-with-pillow-and-blanket-clipart-on-transparent-background-isolated-white-mattress-cozy-white-cot-furniture-with-bed-sheets-free-png.png",
+          "quantity": 1
+        }
+      ],
+      "date": "02/05/2024"
     }
   ]
 }
