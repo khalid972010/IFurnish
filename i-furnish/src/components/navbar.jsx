@@ -30,7 +30,7 @@ const Navbars = ({ onHideFooter }) => {
           to="/"
           style={{ color: "#24d278", fontSize: "22px", fontWeight: "bold" }}
         >
-          IFurnish
+          iFurnish
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -102,8 +102,24 @@ const Navbars = ({ onHideFooter }) => {
                 to="/cart"
                 onClick={() => handleNavbarClick("/cart")}
               >
-                <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon>
-                {cartLength}
+                <span
+                  style={{
+                    backgroundColor: "#24d278",
+                    color: "white",
+                    borderRadius: "50%",
+                    minWidth: "20px",
+                    paddingLeft: "5px",
+                    paddingRight: "5px",
+                    textAlign: "center",
+                    display: "inline-block",
+                  }}
+                >
+                  {cartLength}
+                </span>
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  style={{ height: "25px" }}
+                ></FontAwesomeIcon>
               </Nav.Link>
             )}
             {firstChar && <AccountMenu></AccountMenu>}

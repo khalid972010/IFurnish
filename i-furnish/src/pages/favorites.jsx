@@ -35,62 +35,75 @@ const Favorites = () => {
                     <th width="15%"></th>
                   </tr>
                 </thead>
+
                 <tbody>
-                  {favItems?.map((f) => (
-                    <tr key={f.id}>
-                      <td width="45%">
-                        <div
-                          className={
-                            styles["display-flex"] +
-                            " " +
-                            styles["align-center"]
-                          }
-                        >
-                          <div className={styles["img-product"]}>
-                            <img
-                              src={f.image}
-                              alt=""
-                              className="mCS_img_loaded"
-                            />
-                          </div>
-                          <div className={styles["name-product"]}>{f.name}</div>
-                        </div>
-                      </td>
-                      <td width="15%" className={styles.price}>
-                        {f.price}
-                      </td>
-                      <td width="15%">
-                        <span
-                          className={styles["in-stock-box"]}
-                          style={{ backgroundColor: "green" }}
-                        >
-                          In Stock
-                        </span>
-                      </td>
-                      <td width="15%">
-                        <button
-                          className={
-                            styles["round-black-btn"] +
-                            " " +
-                            styles["small-btn"]
-                          }
-                          onClick={() => handleOnClick(f)}
-                        >
-                          Add to Cart
-                        </button>
-                      </td>
-                      <td width="15%">
-                        <button
-                          className={
-                            styles["round-red-btn"] + " " + styles["small-btn"]
-                          }
-                          onClick={() => handleOnDelete(f)}
-                        >
-                          Remove
-                        </button>
+                  {!favItems || favItems?.length === 0 ? (
+                    <tr>
+                      <td colSpan="5" style={{ textAlign: "center" }}>
+                        No favorites
                       </td>
                     </tr>
-                  ))}
+                  ) : (
+                    favItems?.map((f) => (
+                      <tr key={f.id}>
+                        <td width="45%">
+                          <div
+                            className={
+                              styles["display-flex"] +
+                              " " +
+                              styles["align-center"]
+                            }
+                          >
+                            <div className={styles["img-product"]}>
+                              <img
+                                src={f.image}
+                                alt=""
+                                className="mCS_img_loaded"
+                              />
+                            </div>
+                            <div className={styles["name-product"]}>
+                              {f.name}
+                            </div>
+                          </div>
+                        </td>
+                        <td width="15%" className={styles.price}>
+                          {f.price}
+                        </td>
+                        <td width="15%">
+                          <span
+                            className={styles["in-stock-box"]}
+                            style={{ backgroundColor: "green" }}
+                          >
+                            In Stock
+                          </span>
+                        </td>
+                        <td width="15%">
+                          <button
+                            className={
+                              styles["round-black-btn"] +
+                              " " +
+                              styles["small-btn"]
+                            }
+                            onClick={() => handleOnClick(f)}
+                          >
+                            Add to Cart
+                          </button>
+                        </td>
+                        <td width="15%">
+                          <button
+                            className={
+                              styles["round-red-btn"] +
+                              " " +
+                              styles["small-btn"]
+                            }
+                            onClick={() => handleOnDelete(f)}
+                          >
+                            Remove
+                          </button>
+                        </td>
+                      </tr>
+                    ))
+                  )}
                 </tbody>
               </table>
             </div>

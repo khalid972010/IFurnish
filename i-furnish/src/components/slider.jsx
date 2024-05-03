@@ -3,6 +3,7 @@ import "../styles/responsive.css";
 import "../styles/style.css";
 import globalStyle from "../styles/style.module.scss";
 import "../styles/bootstrap.css";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   return (
@@ -72,12 +73,12 @@ const Slider = () => {
                         friends.
                       </p>
                       <div className="btn-box">
-                        <a href="" className="btn-1">
+                        <Link className="btn-1" to="/login">
                           Read More
-                        </a>
-                        <a href="" className="btn-2">
+                        </Link>
+                        <Link className="btn-2" to="/contact">
                           Contact us
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -119,8 +120,9 @@ const Slider = () => {
                   >
                     <div className="img-box">
                       <img
-                        src="https://th.bing.com/th/id/R.ad531cf1d5093b3b8c2eccb8df99e694?rik=%2bbWJIDjBB%2bF1Xg&pid=ImgRaw&r=0"
+                        src="https://www.pngplay.com/wp-content/uploads/2/Modern-Chair-PNG-HD-Quality.png"
                         alt=""
+                        height="370px"
                       />
                     </div>
                   </div>
@@ -158,8 +160,9 @@ const Slider = () => {
                   >
                     <div class="img-box">
                       <img
-                        src="https://th.bing.com/th/id/R.4f8e3e49ac72d3a01a59e72797b8ab5e?rik=oAql4yvYvOy97g&riu=http%3a%2f%2fwww.stickpng.com%2fassets%2fimages%2f58e90049eb97430e819064d4.png&ehk=2l70yxF%2fYoXGzJbbYAoXq8j6LR3OAKsDeIZTJ3Wghlg%3d&risl=&pid=ImgRaw&r=0"
+                        src="https://i.pinimg.com/originals/93/18/b1/9318b13f6adfb30b08bb1f599100765d.png"
                         alt=""
+                        height="300px"
                       />
                     </div>
                   </div>
