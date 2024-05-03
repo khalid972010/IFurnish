@@ -45,13 +45,15 @@ const Navbars = ({ onHideFooter }) => {
             >
               About
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/favorites"
-              onClick={() => handleNavbarClick("/favorites")}
-            >
-              Favorites
-            </Nav.Link>
+            {firstChar && (
+              <Nav.Link
+                as={Link}
+                to="/favorites"
+                onClick={() => handleNavbarClick("/favorites")}
+              >
+                Favorites
+              </Nav.Link>
+            )}
 
             <Nav.Link
               as={Link}
