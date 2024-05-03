@@ -73,17 +73,6 @@
       "lastName": "Essam"
     },
     {
-      "id": "7aa6",
-      "email": "Sara@gmail",
-      "password": "Sara123",
-      "confirmPassword": "Sara123",
-      "firstName": "Sara",
-      "lastName": "Abdelsalam",
-      "agreedToTerms": "on",
-      "cart": [],
-      "wishlist": []
-    },
-    {
       "id": "9bb4",
       "email": "mazenaymanmo22@gmail.com",
       "password": "Mazen123",
@@ -121,6 +110,15 @@
       "confirmPassword": "123456",
       "firstName": "Hamdy",
       "lastName": "Mahmoud",
+      "agreedToTerms": "on"
+    },
+    {
+      "id": "5c83",
+      "email": "halabib@gmail.com",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "firstName": "khalid",
+      "lastName": "elsayed",
       "agreedToTerms": "on"
     }
   ],
@@ -326,18 +324,18 @@
       "name": "Mahmoud Hamdy"
     },
     {
-      "id": "7ab5",
+      "id": "62e1",
       "clientID": "9bb4",
-      "price": 199.99,
+      "price": 239.97,
       "products": [
         {
-          "id": "1",
-          "name": "Comfy Armchair",
-          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
-          "category": "chair",
-          "price": 199.99,
-          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png",
-          "quantity": 1
+          "id": "4",
+          "name": "Modern Rug",
+          "description": "Add a pop of color and texture to any room with this modern rug. Its bold design and soft fibers make it a stylish and functional accent piece.",
+          "category": "rug",
+          "price": 79.99,
+          "image": "https://png.pngtree.com/png-clipart/20221118/ourmid/pngtree-modern-carpet-png-image_6469482.png",
+          "quantity": 3
         }
       ],
       "date": "03/05/2024"

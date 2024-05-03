@@ -7,7 +7,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../redux/store/slices/cart-slice";
 import { addItemToFavorites } from "../redux/store/slices/wish-list-slice";
-
+import FavoriteIcon from "@mui/icons-material/Favorite";
 const Item = () => {
   const [item, setItem] = useState(null);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -59,8 +59,7 @@ const Item = () => {
         width: "85vw",
         marginTop: "80px",
         marginBottom: "80px",
-      }}
-    >
+      }}>
       <div className={classes.images}>
         <img src={item.image} alt="Product" width="50%" />
       </div>
@@ -86,8 +85,7 @@ const Item = () => {
                 marginRight: "10px",
                 width: "80%",
                 backgroundColor: "#24d278",
-              }}
-            >
+              }}>
               Add to Cart
             </button>
           )}
@@ -96,15 +94,15 @@ const Item = () => {
             className={`${classes.like} ${classes.btnItem}`}
             style={{
               width: "15%",
-              backgroundColor: isFavorite ? "#24d278" : "white",
-              border: isFavorite ? "" : "1px black solid",
-            }}
-          >
+              backgroundColor: isFavorite ? "transparent" : "white",
+              border: "1px solid #e0e0e0",
+            }}>
             <FontAwesomeIcon
               icon={faHeart}
               style={{
-                color: isFavorite ? "white" : "#24d278",
-                height: "19px",
+                color: !isFavorite ? "grey" : "#24d278",
+                height: "25px",
+                margin: "-3px",
               }}
             />
           </button>
