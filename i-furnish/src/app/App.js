@@ -25,17 +25,21 @@ function App() {
   const onHideFooter = (value) => {
     setHideFooter(value);
   };
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
 
   return (
     <Suspense fallback={<SimpleBackdrop />}>
       <Provider store={store}>
         <BrowserRouter>
-          <Navbars onHideFooter={onHideFooter} />
+          <Navbars onHideFooter={onHideFooter}  onSearch={handleSearch}  />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/favorites" element={<Favorites />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route path="/shop"  element={<Shop searchQuery={searchQuery} />} />
             <Route path="/furniture" element={<Furniture />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/profile" element={<Profile />} />

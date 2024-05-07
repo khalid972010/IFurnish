@@ -7,16 +7,34 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllPrds } from "../redux/store/slices/product-slice";
 import styles from "../styles/filter.module.css";
 
-const Shop = () => {
+const Shop = ({ searchQuery }) => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.products);
+  const allProducts = useSelector((state) => state.products.products);
   const [isShown, setIsShown] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState(new Set());
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [priceFilter, setPriceFilter] = useState("all");
+
   useEffect(() => {
     dispatch(getAllPrds());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (searchQuery) {
+      const filtered = allProducts.filter((product) => {
+        const productName = product.name && product.name.toLowerCase();
+        const query = searchQuery && searchQuery.toLowerCase();
+        return productName && query && productName.includes(query);
+      });
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts(allProducts);
+    }
+  }, [searchQuery, allProducts]);
+
+  useEffect(() => {
+    handleFilter();
+  }, [priceFilter, selectedCategories, allProducts]);
 
   function handleShowMore() {
     setIsShown(!isShown);
@@ -33,8 +51,9 @@ const Shop = () => {
       return newCategories;
     });
   }
+
   const handleFilter = () => {
-    let filtered = products.filter((product) => {
+    let filtered = allProducts.filter((product) => {
       if (priceFilter === "all") {
         return true;
       } else if (priceFilter === "1") {
@@ -45,11 +64,13 @@ const Shop = () => {
         return product.price >= 151 && product.price <= 200;
       }
     });
+    if (selectedCategories.size > 0) {
+      filtered = filtered.filter((product) =>
+        selectedCategories.has(product.category)
+      );
+    }
     setFilteredProducts(filtered);
   };
-  useEffect(() => {
-    handleFilter();
-  }, [priceFilter, products]);
 
   return (
     <>
@@ -70,9 +91,7 @@ const Shop = () => {
             onChange={(e) => setPriceFilter(e.target.value)}
             style={{ cursor: "pointer" }}
           >
-            <option value="all" selected>
-              Filter by price
-            </option>
+            <option value="all">Filter by price</option>
             <option value="1">50$ - 100$</option>
             <option value="2">100$ - 150$</option>
             <option value="3">150$+</option>
@@ -83,43 +102,8 @@ const Shop = () => {
             style={{ width: "75vw" }}
           >
             {isShown
-              ? products
-                  ?.filter((product) =>
-                    selectedCategories.size === 0
-                      ? true
-                      : selectedCategories.has(product.category)
-                  )
-                  .filter((product) => {
-                    if (priceFilter === "1") {
-                      return product.price >= 25 && product.price <= 100;
-                    } else if (priceFilter === "2") {
-                      return product.price > 100 && product.price <= 150;
-                    } else if (priceFilter === "3") {
-                      return product.price > 150 && product.price <= 20000;
-                    } else {
-                      return true; // Return all products if no price filter is applied
-                    }
-                  })
-                  .map((e) => <ShopCard key={e.id} {...e} />)
-              : products
-                  ?.filter((product) =>
-                    selectedCategories.size === 0
-                      ? true
-                      : selectedCategories.has(product.category)
-                  )
-                  .filter((product) => {
-                    if (priceFilter === "1") {
-                      return product.price >= 25 && product.price <= 100;
-                    } else if (priceFilter === "2") {
-                      return product.price > 100 && product.price <= 150;
-                    } else if (priceFilter === "3") {
-                      return product.price > 150 && product.price <= 20000;
-                    } else {
-                      return true;
-                    }
-                  })
-                  .slice(0, 4)
-                  .map((e) => <ShopCard key={e.id} {...e} />)}
+              ? filteredProducts.map((e) => <ShopCard key={e.id} {...e} />)
+              : filteredProducts.slice(0, 4).map((e) => <ShopCard key={e.id} {...e} />)}
           </div>
           <Link to="#" className="brand-btn" onClick={handleShowMore}>
             {!isShown ? "See More" : "See Less"}

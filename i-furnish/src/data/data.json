@@ -8,15 +8,25 @@
       "id": "1184",
       "cart": [
         {
-          "id": "4",
-          "name": "Modern Rug",
-          "description": "Add a pop of color and texture to any room with this modern rug. Its bold design and soft fibers make it a stylish and functional accent piece.",
-          "category": "rug",
-          "price": 79.99,
-          "image": "rug.jpg"
+          "id": "1",
+          "name": "Comfy Armchair",
+          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
+          "category": "chair",
+          "price": 199.99,
+          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png",
+          "quantity": 2
         }
       ],
-      "wishlist": [],
+      "wishlist": [
+        {
+          "id": "1",
+          "name": "Comfy Armchair",
+          "description": "Sink into this plush armchair and relax after a long day. Its soft cushions and sturdy frame make it the perfect addition to any living room.",
+          "category": "chair",
+          "price": 199.99,
+          "image": "https://i.pinimg.com/originals/92/a1/32/92a132a1ae5f7be3b32aceb0ef14b185.png"
+        }
+      ],
       "firstName": "Rana",
       "lastName": "essam"
     },
