@@ -95,7 +95,7 @@ const Footer = () => {
                 <h5>Newsletter</h5>
                 <form action>
                   <input type="email" placeholder="Enter your email" />
-                  <button>Subscribe</button>
+                  <button >Subscribe</button>
                 </form>
                 <div className="social_box">
                   <a href>

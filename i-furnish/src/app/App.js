@@ -45,7 +45,8 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/footer" element={<Footer />} />
             <Route path="/signup" element={<SignupPage />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<LoginPage onHideFooter={onHideFooter} />} />
+
             <Route path="/cart" element={<Cart />} />
             <Route path="/item/:id" element={<Item />} />
             <Route path="/dashboard" element={<Dashboard />} />

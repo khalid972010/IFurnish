@@ -57,7 +57,7 @@ const Navbars = ({ onHideFooter, onSearch }) => {
           </Nav.Link>
         </Nav>
 
-        {firstChar && (
+
           <Form inline>
             <FormControl
   type="text"
@@ -79,7 +79,7 @@ const Navbars = ({ onHideFooter, onSearch }) => {
 />
 
           </Form>
-        )}
+      
 
         <Nav>
           {!firstChar && (

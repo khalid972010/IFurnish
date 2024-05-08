@@ -194,12 +194,23 @@ function Login() {
                 </Grid>
                 <Grid item>
                   <Link
+                    onClick={() => navigate("/signup")}
+                    variant="body2"
+                    sx={{
+                      color: "#66bb6a !important",
+                      cursor: "pointer",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    Don't have an account? Sign Up
+                  </Link>
+                  {/* <Link
                     href="/signup"
                     variant="body2"
                     sx={{ color: "#66bb6a" }}
                   >
                     {"Don't have an account? Sign Up"}
-                  </Link>
+                  </Link> */}
                 </Grid>
               </Grid>
             </Box>

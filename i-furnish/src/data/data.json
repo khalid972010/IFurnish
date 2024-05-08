@@ -130,6 +130,24 @@
       "firstName": "khalid",
       "lastName": "elsayed",
       "agreedToTerms": "on"
+    },
+    {
+      "id": "e4b4",
+      "email": "rana123@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "firstName": "",
+      "lastName": "",
+      "agreedToTerms": "on"
+    },
+    {
+      "id": "b2ed",
+      "email": "Ranaessam371@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "firstName": "rana",
+      "lastName": "essam",
+      "agreedToTerms": "on"
     }
   ],
   "products": [
