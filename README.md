@@ -1,6 +1,6 @@
 ## IFurnish
 
-an E-commerce furniture website that allows users to purchase different categories of furniture, adding to wish list, adding to cart.
+An E-commerce furniture website that allows users to purchase different categories of furniture, adding to wish list, adding to cart.
 
 
 ## Used Technologies
